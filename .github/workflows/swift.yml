@@ -34,5 +34,9 @@ jobs:
       - name: Xcode Build
         uses: devbotsxyz/xcode-build@v1.0.0
         with:
-          project: octosub.xcodeproj
-          action: build, test
+          action: build
+          
+      - name: Xcode Test
+        uses: devbotsxyz/xcode-build@v1.0.0
+        with:
+          action: test
