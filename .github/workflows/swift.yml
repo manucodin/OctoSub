@@ -34,11 +34,13 @@ jobs:
       - name: Xcode Build
         uses: sersoft-gmbh/xcodebuild-action@v2
         with:
+          project: octosub.xcodeproj
           scheme: octosub
           action: build
           
       - name: Xcode Test
         uses: sersoft-gmbh/xcodebuild-action@v2
         with:
+          project: octosub.xcodeproj
           scheme: octosub
           action: test
