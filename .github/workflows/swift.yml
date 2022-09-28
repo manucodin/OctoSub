@@ -32,13 +32,13 @@ jobs:
           xcode-version: "14.0"
 
       - name: Xcode Build
-        uses: devbotsxyz/xcode-build@v1.0.0
+        uses: sersoft-gmbh/xcodebuild-action@v2
         with:
           scheme: octosub
           action: build
           
       - name: Xcode Test
-        uses: devbotsxyz/xcode-build@v1.0.0
+        uses: sersoft-gmbh/xcodebuild-action@v2
         with:
           scheme: octosub
           action: test
