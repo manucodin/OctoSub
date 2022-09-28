@@ -20,7 +20,7 @@ struct octosubApp: App {
                     OnBoardingView()
                 } else {
                     NavigationView {
-                        OnBoardingView()
+                        UserSubscriptionsView()
                             .navigationBarTitleDisplayMode(.inline)
                     }.onAppear {
                         NavigationStyles.applyBlueHeaderStyle()
