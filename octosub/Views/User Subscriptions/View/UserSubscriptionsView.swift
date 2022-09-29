@@ -27,7 +27,15 @@ struct UserSubscriptionsView: View {
                                 .sheet(isPresented: $viewModel.showEditSubscription, onDismiss: {
                                     viewModel.loadSubscriptions()
                                 },content: {
-                                    EmptyView()
+                                    if let selectedSubscription = viewModel.selectedSubscription {
+                                        NavigationView {
+                                            CreateSubscriptionView(
+                                                subscription: selectedSubscription,
+                                                subscriptionService: selectedSubscription.subscriptionService,
+                                                showView: $viewModel.showEditSubscription
+                                            )
+                                        }
+                                    }
                                 })
                         }
                         .listStyle(.plain)
@@ -50,7 +58,9 @@ struct UserSubscriptionsView: View {
                     })
                 }
             }
-        }.sheet(isPresented: $viewModel.showServicesList, content: {
+        }.sheet(isPresented: $viewModel.showServicesList, onDismiss: {
+            viewModel.loadSubscriptions()
+        },content: {
             SubscriptionServicesListView(showView: $viewModel.showServicesList)
         }).sheet(isPresented: $viewModel.showEditSubscription, onDismiss: {
             viewModel.loadSubscriptions()
