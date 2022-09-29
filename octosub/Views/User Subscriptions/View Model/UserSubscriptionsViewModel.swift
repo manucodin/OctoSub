@@ -19,12 +19,17 @@ class UserSubscriptionsViewModel: ObservableObject {
     @Published var totalAmountFormatted: String = ""
     
     private let numberFormatter = CurrencyFormatter()
+    private let subscriptionsDataSource: SubscriptionsDataSource
     
-    init() {
+    init(subscriptionsDataSource: SubscriptionsDataSource = SubscriptionsDataSourceImp()) {
+        self.subscriptionsDataSource = subscriptionsDataSource
         self.totalAmountFormatted = numberFormatter.string(from: NSNumber(value: totalAmount)) ?? ""
     }
     
-    public func loadSubscriptions() {}
+    public func loadSubscriptions() {
+        subscriptions = subscriptionsDataSource.getAll()
+        calculateTotalAmmount()
+    }
     
     public func presentServiceList() {
         self.showServicesList = true
@@ -37,5 +42,11 @@ class UserSubscriptionsViewModel: ObservableObject {
     public func select(subscription: Subscription) {
         self.showEditSubscription = true
         self.selectedSubscription = subscription
+    }
+    
+    private func calculateTotalAmmount() {
+        let prices = subscriptions.map{ $0.price }
+        totalAmount = prices.reduce(0, +)
+        totalAmountFormatted = CurrencyFormatter().string(from: NSNumber(value:totalAmount)) ?? ""
     }
 }

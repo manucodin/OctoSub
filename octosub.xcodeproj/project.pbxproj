@@ -40,6 +40,32 @@
 		5424903028E4F09200149C08 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5424902F28E4F09200149C08 /* Preview Assets.xcassets */; };
 		5424904428E4F09300149C08 /* octosubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5424904328E4F09300149C08 /* octosubUITests.swift */; };
 		5424904628E4F09300149C08 /* octosubUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5424904528E4F09300149C08 /* octosubUITestsLaunchTests.swift */; };
+		543C52E128E60BC300B94B9F /* CreateSubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543C52E028E60BC300B94B9F /* CreateSubscriptionView.swift */; };
+		543C52E328E60C1100B94B9F /* CreateSubscriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543C52E228E60C1100B94B9F /* CreateSubscriptionViewModel.swift */; };
+		543C52E628E60D6600B94B9F /* SubscriptionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543C52E528E60D6600B94B9F /* SubscriptionError.swift */; };
+		543C52E928E60EB100B94B9F /* SubscriptionsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543C52E828E60EB100B94B9F /* SubscriptionsDataSource.swift */; };
+		543C52EB28E60EDA00B94B9F /* SubscriptionsDataSourceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543C52EA28E60EDA00B94B9F /* SubscriptionsDataSourceImp.swift */; };
+		543C530028E60F0200B94B9F /* SubscriptionDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543C52F128E60F0200B94B9F /* SubscriptionDAO.swift */; };
+		543C530128E60F0200B94B9F /* SubscriptionDAOImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543C52F228E60F0200B94B9F /* SubscriptionDAOImp.swift */; };
+		543C530428E60F0200B94B9F /* GenericDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543C52F728E60F0200B94B9F /* GenericDAO.swift */; };
+		543C530528E60F0200B94B9F /* GenericDAOImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543C52F828E60F0200B94B9F /* GenericDAOImp.swift */; };
+		543C530628E60F0200B94B9F /* SubscriptionServiceEntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543C52FA28E60F0200B94B9F /* SubscriptionServiceEntityMapper.swift */; };
+		543C530728E60F0200B94B9F /* SubscriptionEntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543C52FB28E60F0200B94B9F /* SubscriptionEntityMapper.swift */; };
+		543C530828E60F0200B94B9F /* SubscriptionServiceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543C52FD28E60F0200B94B9F /* SubscriptionServiceEntity.swift */; };
+		543C530928E60F0200B94B9F /* SubscriptionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543C52FE28E60F0200B94B9F /* SubscriptionEntity.swift */; };
+		543C530C28E60F8400B94B9F /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 543C530B28E60F8400B94B9F /* Realm */; };
+		543C530E28E60F8400B94B9F /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 543C530D28E60F8400B94B9F /* RealmSwift */; };
+		543C531128E6123700B94B9F /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 543C531028E6123700B94B9F /* BottomSheet */; };
+		543C532628E6135D00B94B9F /* DateFieldWithTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543C531528E6135D00B94B9F /* DateFieldWithTextView.swift */; };
+		543C532828E6135D00B94B9F /* TextFieldWithTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543C531928E6135D00B94B9F /* TextFieldWithTextView.swift */; };
+		543C532928E6135D00B94B9F /* SubscriptionPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543C531A28E6135D00B94B9F /* SubscriptionPriceView.swift */; };
+		543C532A28E6135D00B94B9F /* CurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543C531C28E6135D00B94B9F /* CurrencyTextField.swift */; };
+		543C532B28E6135D00B94B9F /* CurrencyUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543C531D28E6135D00B94B9F /* CurrencyUITextField.swift */; };
+		543C532C28E6135D00B94B9F /* TimePickerStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543C532028E6135D00B94B9F /* TimePickerStrategy.swift */; };
+		543C532D28E6135D00B94B9F /* TimePickerRepetitionStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543C532128E6135D00B94B9F /* TimePickerRepetitionStrategy.swift */; };
+		543C532E28E6135D00B94B9F /* TimePickerDurationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543C532228E6135D00B94B9F /* TimePickerDurationStrategy.swift */; };
+		543C532F28E6135D00B94B9F /* TimeMultiplePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543C532328E6135D00B94B9F /* TimeMultiplePicker.swift */; };
+		543C533028E6135D00B94B9F /* PickerRepresentableValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543C532528E6135D00B94B9F /* PickerRepresentableValue.swift */; };
 		54ADC30F28E5746300725770 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 54ADC30E28E5746300725770 /* Nimble */; };
 		54ADC31328E576B900725770 /* SubscriptionServicesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54ADC31228E576B900725770 /* SubscriptionServicesListViewModel.swift */; };
 		54ADC31628E5770300725770 /* SubscriptionServicesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54ADC31528E5770300725770 /* SubscriptionServicesDataSource.swift */; };
@@ -115,6 +141,29 @@
 		5424903F28E4F09300149C08 /* octosubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = octosubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5424904328E4F09300149C08 /* octosubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = octosubUITests.swift; sourceTree = "<group>"; };
 		5424904528E4F09300149C08 /* octosubUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = octosubUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		543C52E028E60BC300B94B9F /* CreateSubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSubscriptionView.swift; sourceTree = "<group>"; };
+		543C52E228E60C1100B94B9F /* CreateSubscriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSubscriptionViewModel.swift; sourceTree = "<group>"; };
+		543C52E528E60D6600B94B9F /* SubscriptionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionError.swift; sourceTree = "<group>"; };
+		543C52E828E60EB100B94B9F /* SubscriptionsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsDataSource.swift; sourceTree = "<group>"; };
+		543C52EA28E60EDA00B94B9F /* SubscriptionsDataSourceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsDataSourceImp.swift; sourceTree = "<group>"; };
+		543C52F128E60F0200B94B9F /* SubscriptionDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionDAO.swift; sourceTree = "<group>"; };
+		543C52F228E60F0200B94B9F /* SubscriptionDAOImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionDAOImp.swift; sourceTree = "<group>"; };
+		543C52F728E60F0200B94B9F /* GenericDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericDAO.swift; sourceTree = "<group>"; };
+		543C52F828E60F0200B94B9F /* GenericDAOImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericDAOImp.swift; sourceTree = "<group>"; };
+		543C52FA28E60F0200B94B9F /* SubscriptionServiceEntityMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionServiceEntityMapper.swift; sourceTree = "<group>"; };
+		543C52FB28E60F0200B94B9F /* SubscriptionEntityMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionEntityMapper.swift; sourceTree = "<group>"; };
+		543C52FD28E60F0200B94B9F /* SubscriptionServiceEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionServiceEntity.swift; sourceTree = "<group>"; };
+		543C52FE28E60F0200B94B9F /* SubscriptionEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionEntity.swift; sourceTree = "<group>"; };
+		543C531528E6135D00B94B9F /* DateFieldWithTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFieldWithTextView.swift; sourceTree = "<group>"; };
+		543C531928E6135D00B94B9F /* TextFieldWithTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldWithTextView.swift; sourceTree = "<group>"; };
+		543C531A28E6135D00B94B9F /* SubscriptionPriceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionPriceView.swift; sourceTree = "<group>"; };
+		543C531C28E6135D00B94B9F /* CurrencyTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyTextField.swift; sourceTree = "<group>"; };
+		543C531D28E6135D00B94B9F /* CurrencyUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyUITextField.swift; sourceTree = "<group>"; };
+		543C532028E6135D00B94B9F /* TimePickerStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePickerStrategy.swift; sourceTree = "<group>"; };
+		543C532128E6135D00B94B9F /* TimePickerRepetitionStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePickerRepetitionStrategy.swift; sourceTree = "<group>"; };
+		543C532228E6135D00B94B9F /* TimePickerDurationStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePickerDurationStrategy.swift; sourceTree = "<group>"; };
+		543C532328E6135D00B94B9F /* TimeMultiplePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeMultiplePicker.swift; sourceTree = "<group>"; };
+		543C532528E6135D00B94B9F /* PickerRepresentableValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerRepresentableValue.swift; sourceTree = "<group>"; };
 		54ADC31228E576B900725770 /* SubscriptionServicesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionServicesListViewModel.swift; sourceTree = "<group>"; };
 		54ADC31528E5770300725770 /* SubscriptionServicesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionServicesDataSource.swift; sourceTree = "<group>"; };
 		54ADC31728E5774000725770 /* SubscriptionServicesDataSourceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionServicesDataSourceImp.swift; sourceTree = "<group>"; };
@@ -135,6 +184,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				543C530E28E60F8400B94B9F /* RealmSwift in Frameworks */,
+				543C531128E6123700B94B9F /* BottomSheet in Frameworks */,
+				543C530C28E60F8400B94B9F /* Realm in Frameworks */,
 				54ADC33828E5794900725770 /* FirebaseMessaging in Frameworks */,
 				54ADC33228E5794900725770 /* FirebaseCrashlytics in Frameworks */,
 				54ADC33428E5794900725770 /* FirebaseFirestore in Frameworks */,
@@ -165,6 +217,7 @@
 		541184AA28E4F2130003CFA6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				543C52DC28E60B0600B94B9F /* Create Subscription */,
 				541184DD28E4FA760003CFA6 /* Subcription Services */,
 				541184D528E4F9EE0003CFA6 /* User Subscriptions */,
 				541184AD28E4F24F0003CFA6 /* OnBoarding */,
@@ -185,9 +238,11 @@
 		541184B028E4F2F10003CFA6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				543C531328E6135D00B94B9F /* View Components */,
 				541184D028E4F78A0003CFA6 /* Style */,
 				541184B128E4F2F90003CFA6 /* Extensions */,
 				541184E628E4FB170003CFA6 /* Formatters */,
+				543C52E428E60D5100B94B9F /* Error */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -249,6 +304,7 @@
 			children = (
 				541184C028E4F4BB0003CFA6 /* App Settings */,
 				54ADC31428E576F000725770 /* Subscription Services */,
+				543C52E728E60E9B00B94B9F /* Subscriptions */,
 			);
 			path = "Data Sources";
 			sourceTree = "<group>";
@@ -454,6 +510,7 @@
 				541184C528E4F4EF0003CFA6 /* General */,
 				541184AA28E4F2130003CFA6 /* Views */,
 				541184BF28E4F49D0003CFA6 /* Data Sources */,
+				543C52EC28E60F0200B94B9F /* Persistence */,
 				54ADC31928E5777C00725770 /* Network */,
 				5424902E28E4F09200149C08 /* Preview Content */,
 				54D61E6128E571D7005D766F /* Localizables */,
@@ -489,6 +546,176 @@
 				5424904528E4F09300149C08 /* octosubUITestsLaunchTests.swift */,
 			);
 			path = octosubUITests;
+			sourceTree = "<group>";
+		};
+		543C52DC28E60B0600B94B9F /* Create Subscription */ = {
+			isa = PBXGroup;
+			children = (
+				543C52DE28E60B3900B94B9F /* View Model */,
+				543C52DD28E60B3500B94B9F /* View */,
+			);
+			path = "Create Subscription";
+			sourceTree = "<group>";
+		};
+		543C52DD28E60B3500B94B9F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				543C531228E6131C00B94B9F /* Components */,
+				543C52E028E60BC300B94B9F /* CreateSubscriptionView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		543C52DE28E60B3900B94B9F /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				543C52E228E60C1100B94B9F /* CreateSubscriptionViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		543C52E428E60D5100B94B9F /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				543C52E528E60D6600B94B9F /* SubscriptionError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		543C52E728E60E9B00B94B9F /* Subscriptions */ = {
+			isa = PBXGroup;
+			children = (
+				543C52E828E60EB100B94B9F /* SubscriptionsDataSource.swift */,
+				543C52EA28E60EDA00B94B9F /* SubscriptionsDataSourceImp.swift */,
+			);
+			path = Subscriptions;
+			sourceTree = "<group>";
+		};
+		543C52EC28E60F0200B94B9F /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				543C52EF28E60F0200B94B9F /* DAO */,
+				543C52F928E60F0200B94B9F /* Mappers */,
+				543C52FC28E60F0200B94B9F /* Entities */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		543C52EF28E60F0200B94B9F /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				543C52F028E60F0200B94B9F /* Subcription */,
+				543C52F628E60F0200B94B9F /* Generic DAO */,
+			);
+			path = DAO;
+			sourceTree = "<group>";
+		};
+		543C52F028E60F0200B94B9F /* Subcription */ = {
+			isa = PBXGroup;
+			children = (
+				543C52F128E60F0200B94B9F /* SubscriptionDAO.swift */,
+				543C52F228E60F0200B94B9F /* SubscriptionDAOImp.swift */,
+			);
+			path = Subcription;
+			sourceTree = "<group>";
+		};
+		543C52F628E60F0200B94B9F /* Generic DAO */ = {
+			isa = PBXGroup;
+			children = (
+				543C52F728E60F0200B94B9F /* GenericDAO.swift */,
+				543C52F828E60F0200B94B9F /* GenericDAOImp.swift */,
+			);
+			path = "Generic DAO";
+			sourceTree = "<group>";
+		};
+		543C52F928E60F0200B94B9F /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				543C52FA28E60F0200B94B9F /* SubscriptionServiceEntityMapper.swift */,
+				543C52FB28E60F0200B94B9F /* SubscriptionEntityMapper.swift */,
+			);
+			path = Mappers;
+			sourceTree = "<group>";
+		};
+		543C52FC28E60F0200B94B9F /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				543C52FD28E60F0200B94B9F /* SubscriptionServiceEntity.swift */,
+				543C52FE28E60F0200B94B9F /* SubscriptionEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		543C531228E6131C00B94B9F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		543C531328E6135D00B94B9F /* View Components */ = {
+			isa = PBXGroup;
+			children = (
+				543C531428E6135D00B94B9F /* DateField With Text */,
+				543C531828E6135D00B94B9F /* TextFields */,
+				543C531B28E6135D00B94B9F /* Currency Field */,
+				543C531E28E6135D00B94B9F /* TimeMultiple Picker */,
+			);
+			path = "View Components";
+			sourceTree = "<group>";
+		};
+		543C531428E6135D00B94B9F /* DateField With Text */ = {
+			isa = PBXGroup;
+			children = (
+				543C531528E6135D00B94B9F /* DateFieldWithTextView.swift */,
+			);
+			path = "DateField With Text";
+			sourceTree = "<group>";
+		};
+		543C531828E6135D00B94B9F /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				543C531928E6135D00B94B9F /* TextFieldWithTextView.swift */,
+				543C531A28E6135D00B94B9F /* SubscriptionPriceView.swift */,
+			);
+			path = TextFields;
+			sourceTree = "<group>";
+		};
+		543C531B28E6135D00B94B9F /* Currency Field */ = {
+			isa = PBXGroup;
+			children = (
+				543C531C28E6135D00B94B9F /* CurrencyTextField.swift */,
+				543C531D28E6135D00B94B9F /* CurrencyUITextField.swift */,
+			);
+			path = "Currency Field";
+			sourceTree = "<group>";
+		};
+		543C531E28E6135D00B94B9F /* TimeMultiple Picker */ = {
+			isa = PBXGroup;
+			children = (
+				543C531F28E6135D00B94B9F /* Strategies */,
+				543C532328E6135D00B94B9F /* TimeMultiplePicker.swift */,
+				543C532428E6135D00B94B9F /* Picker Representable Protocol */,
+			);
+			path = "TimeMultiple Picker";
+			sourceTree = "<group>";
+		};
+		543C531F28E6135D00B94B9F /* Strategies */ = {
+			isa = PBXGroup;
+			children = (
+				543C532028E6135D00B94B9F /* TimePickerStrategy.swift */,
+				543C532128E6135D00B94B9F /* TimePickerRepetitionStrategy.swift */,
+				543C532228E6135D00B94B9F /* TimePickerDurationStrategy.swift */,
+			);
+			path = Strategies;
+			sourceTree = "<group>";
+		};
+		543C532428E6135D00B94B9F /* Picker Representable Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				543C532528E6135D00B94B9F /* PickerRepresentableValue.swift */,
+			);
+			path = "Picker Representable Protocol";
 			sourceTree = "<group>";
 		};
 		54ADC31028E5768D00725770 /* View Model */ = {
@@ -591,6 +818,9 @@
 				54ADC33728E5794900725770 /* FirebaseMessaging */,
 				54ADC33928E5794900725770 /* FirebaseRemoteConfig */,
 				54ADC33B28E5794900725770 /* FirebaseRemoteConfigSwift */,
+				543C530B28E60F8400B94B9F /* Realm */,
+				543C530D28E60F8400B94B9F /* RealmSwift */,
+				543C531028E6123700B94B9F /* BottomSheet */,
 			);
 			productName = octosub;
 			productReference = 5424902528E4F09200149C08 /* octosub.app */;
@@ -672,6 +902,8 @@
 			packageReferences = (
 				54ADC30D28E5746300725770 /* XCRemoteSwiftPackageReference "Nimble" */,
 				54ADC33028E5794900725770 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				543C530A28E60F8400B94B9F /* XCRemoteSwiftPackageReference "realm-swift" */,
+				543C530F28E6123700B94B9F /* XCRemoteSwiftPackageReference "BottomSheet" */,
 			);
 			productRefGroup = 5424902628E4F09200149C08 /* Products */;
 			projectDirPath = "";
@@ -724,30 +956,53 @@
 				541184C328E4F4BB0003CFA6 /* UserDefaultsDataSourceImp.swift in Sources */,
 				54ADC32F28E578F000725770 /* SubscriptionServiceDTOMapper.swift in Sources */,
 				541184E028E4FA8F0003CFA6 /* SubscriptionService.swift in Sources */,
+				543C52E628E60D6600B94B9F /* SubscriptionError.swift in Sources */,
 				541184ED28E4FBB80003CFA6 /* SubscriptionServiceMother.swift in Sources */,
 				541184DC28E4FA5B0003CFA6 /* Subscription.swift in Sources */,
+				543C530628E60F0200B94B9F /* SubscriptionServiceEntityMapper.swift in Sources */,
 				54ADC32C28E578CF00725770 /* SubscriptionServiceDTO.swift in Sources */,
+				543C532E28E6135D00B94B9F /* TimePickerDurationStrategy.swift in Sources */,
+				543C52E928E60EB100B94B9F /* SubscriptionsDataSource.swift in Sources */,
 				541184DA28E4FA340003CFA6 /* UserSubscriptionViewRow.swift in Sources */,
+				543C52E328E60C1100B94B9F /* CreateSubscriptionViewModel.swift in Sources */,
+				543C533028E6135D00B94B9F /* PickerRepresentableValue.swift in Sources */,
+				543C530928E60F0200B94B9F /* SubscriptionEntity.swift in Sources */,
+				543C530028E60F0200B94B9F /* SubscriptionDAO.swift in Sources */,
 				54ADC31328E576B900725770 /* SubscriptionServicesListViewModel.swift in Sources */,
+				543C532628E6135D00B94B9F /* DateFieldWithTextView.swift in Sources */,
 				541184CB28E4F5D90003CFA6 /* AppSetting.swift in Sources */,
+				543C530728E60F0200B94B9F /* SubscriptionEntityMapper.swift in Sources */,
+				543C530128E60F0200B94B9F /* SubscriptionDAOImp.swift in Sources */,
+				543C530428E60F0200B94B9F /* GenericDAO.swift in Sources */,
+				543C532828E6135D00B94B9F /* TextFieldWithTextView.swift in Sources */,
 				541184C928E4F5C70003CFA6 /* UserPrefencePersitable.swift in Sources */,
 				541184F328E4FCBA0003CFA6 /* UserSubscriptionsEmptyView.swift in Sources */,
 				54ADC31828E5774000725770 /* SubscriptionServicesDataSourceImp.swift in Sources */,
+				543C532C28E6135D00B94B9F /* TimePickerStrategy.swift in Sources */,
 				541184F628E4FD400003CFA6 /* UserSubscriptionsView.swift in Sources */,
+				543C532F28E6135D00B94B9F /* TimeMultiplePicker.swift in Sources */,
+				543C532928E6135D00B94B9F /* SubscriptionPriceView.swift in Sources */,
 				541184E228E4FAD10003CFA6 /* DateDuration.swift in Sources */,
 				54ADC31C28E577A600725770 /* SubcriptionServicesService.swift in Sources */,
 				541184F128E4FC660003CFA6 /* UserSubscriptionsViewHeader.swift in Sources */,
 				54D61E6928E57292005D766F /* String+Extensions.swift in Sources */,
 				541184EA28E4FB740003CFA6 /* SubscriptionMother.swift in Sources */,
 				541184BA28E4F3EA0003CFA6 /* OnBoardingStep.swift in Sources */,
+				543C52EB28E60EDA00B94B9F /* SubscriptionsDataSourceImp.swift in Sources */,
 				541184E828E4FB340003CFA6 /* CurrencyFormatter.swift in Sources */,
 				541184E528E4FB040003CFA6 /* DateType.swift in Sources */,
 				541184AC28E4F2240003CFA6 /* OnBoardingView.swift in Sources */,
 				541184BE28E4F4660003CFA6 /* AppSettingsViewModel.swift in Sources */,
+				543C530528E60F0200B94B9F /* GenericDAOImp.swift in Sources */,
 				541184D228E4F7980003CFA6 /* NavigationStyles.swift in Sources */,
+				543C532D28E6135D00B94B9F /* TimePickerRepetitionStrategy.swift in Sources */,
+				543C532A28E6135D00B94B9F /* CurrencyTextField.swift in Sources */,
 				541184CF28E4F6A20003CFA6 /* AppDelegate.swift in Sources */,
+				543C52E128E60BC300B94B9F /* CreateSubscriptionView.swift in Sources */,
 				541184B728E4F3B90003CFA6 /* OnBoardingViewModel.swift in Sources */,
+				543C532B28E6135D00B94B9F /* CurrencyUITextField.swift in Sources */,
 				541184C428E4F4BB0003CFA6 /* UserDefaultsDataSource.swift in Sources */,
+				543C530828E60F0200B94B9F /* SubscriptionServiceEntity.swift in Sources */,
 				54ADC34128E57A2700725770 /* SubscriptionServicesListRow.swift in Sources */,
 				541184D428E4F7CC0003CFA6 /* UIColor+Extensions.swift in Sources */,
 				54ADC33E28E579D700725770 /* SubscriptionServicesListView.swift in Sources */,
@@ -1138,6 +1393,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		543C530A28E60F8400B94B9F /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+		543C530F28E6123700B94B9F /* XCRemoteSwiftPackageReference "BottomSheet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lucaszischka/BottomSheet";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		54ADC30D28E5746300725770 /* XCRemoteSwiftPackageReference "Nimble" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Quick/Nimble";
@@ -1157,6 +1428,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		543C530B28E60F8400B94B9F /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 543C530A28E60F8400B94B9F /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		543C530D28E60F8400B94B9F /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 543C530A28E60F8400B94B9F /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		543C531028E6123700B94B9F /* BottomSheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 543C530F28E6123700B94B9F /* XCRemoteSwiftPackageReference "BottomSheet" */;
+			productName = BottomSheet;
+		};
 		54ADC30E28E5746300725770 /* Nimble */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 54ADC30D28E5746300725770 /* XCRemoteSwiftPackageReference "Nimble" */;

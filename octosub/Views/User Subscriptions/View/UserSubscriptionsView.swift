@@ -58,6 +58,7 @@ struct UserSubscriptionsView: View {
             EmptyView()
         }).onAppear {
             NavigationStyles.applyBlueHeaderStyle()
+            viewModel.loadSubscriptions()
         }
     }
 }

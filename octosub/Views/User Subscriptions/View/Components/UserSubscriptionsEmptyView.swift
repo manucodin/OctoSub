@@ -14,7 +14,7 @@ struct UserSubscriptionsEmptyView: View {
             Image("subscriptions")
                 .resizable()
                 .frame(width: 100, height: 100)
-            Text("¿A qué esperas para\n añadir tu primera subscripción?")
+            Text("empty_subscriptions_message".localized)
                 .bold()
                 .font(.title3)
                 .foregroundColor(Color.black.opacity(0.4))

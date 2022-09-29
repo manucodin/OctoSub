@@ -14,15 +14,20 @@ struct UserSubscriptionViewRow: View {
         ZStack {
             VStack {
                 HStack {
-                    Image(subscription.subscriptionService?.icon ?? "")
-                        .resizable()
-                        .frame(width: 30, height: 30)
+                    AsyncImage(url: URL(string: subscription.subscriptionService.icon)) { image in
+                           image
+                               .resizable()
+                               .scaledToFill()
+                       } placeholder: {
+                           ProgressView()
+                       }
+                       .frame(width: 44, height: 44)
                     VStack(alignment: .leading) {
-                        Text(subscription.subscriptionService?.name ?? "")
+                        Text(subscription.subscriptionService.name)
                             .foregroundColor(.black)
                             .font(.title3)
                             .bold()
-                        Text(subscription.subscriptionService?.category.capitalized ?? "")
+                        Text(subscription.subscriptionService.category.capitalized)
                             .foregroundColor(Color.black.opacity(0.6))
                             .font(.system(size: 15))
                     }

@@ -19,14 +19,17 @@ struct SubscriptionServicesListView: View {
                         .listRowSeparator(.hidden)
                         .background{
                             NavigationLink("") {
-                                EmptyView()
+                                CreateSubscriptionView(
+                                    subscriptionService: subscriptionService,
+                                    showView: $showView
+                                )
                             }
                         }
                 }
                 .listStyle(.plain)
                 .background(.white)
             }
-            .navigationTitle("add".localized.capitalized)
+            .navigationTitle("services".localized.capitalized)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar{
                 ToolbarItem(placement: .navigationBarLeading) {

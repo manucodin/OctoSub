@@ -9,7 +9,7 @@ import Foundation
 
 struct Subscription: Identifiable {
     let id: String
-    let subscriptionService: SubscriptionService?
+    let subscriptionService: SubscriptionService
     let name: String?
     let userDescription: String?
     let price: Double
@@ -22,14 +22,6 @@ struct Subscription: Identifiable {
     }
     
     var notificationMessage: String {
-        if let subscriptionService = subscriptionService{
-            return "Tu subscripción de \(subscriptionService.name) está a punto de caducar"
-        }
-        
-        if let userDescription = userDescription{
-            return userDescription
-        }
-        
-        return "Una subscripción está a punto de caducar"
+        return "Tu subscripción de \(subscriptionService.name) está a punto de caducar"
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum DateType: String, CaseIterable {
+enum DateType: String, CaseIterable, PickerRepresentableValue {
     case daily
     case weekly
     case monthly
