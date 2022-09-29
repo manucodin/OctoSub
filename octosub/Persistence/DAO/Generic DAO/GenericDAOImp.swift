@@ -31,8 +31,9 @@ extension GenericDAOImp: GenericDAO {
     }
     
     func get<T: Object>(identifier: String) -> T? {
-        let id = try? ObjectId(string: identifier)
-        return realm.object(ofType: T.self, forPrimaryKey: id)
+        guard let identifier = try? ObjectId(string: identifier) else { return nil }
+        
+        return realm.object(ofType: T.self, forPrimaryKey: identifier)
     }
                       
     func getAll<T: RealmFetchable>(type: T.Type) -> Array<T>{
