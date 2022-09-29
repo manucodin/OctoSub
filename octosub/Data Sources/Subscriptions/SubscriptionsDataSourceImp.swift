@@ -29,7 +29,8 @@ extension SubscriptionsDataSourceImp: SubscriptionsDataSource {
     }
     
     func remove(subscription: Subscription) throws {
-        let entity = SubscriptionEntityMapper.transform(subscription: subscription)
+        guard let entity = dao.get(identifier: subscription.id) else { return }
+        
         try dao.remove(entity: entity)
     }
 }

@@ -9,6 +9,7 @@ import Foundation
 
 protocol SubscriptionDAO {
     func save(entity: SubscriptionEntity) throws
+    func get(identifier: String) -> SubscriptionEntity?
     func getAll() -> [SubscriptionEntity]
     func remove(entity: SubscriptionEntity) throws
 }

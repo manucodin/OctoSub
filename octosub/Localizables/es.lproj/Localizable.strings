@@ -53,3 +53,9 @@
 "services" = "servicios";
 
 "error_title_create_subscription" = "Ups... parece que hubo un error";
+
+"delete" = "borrar";
+
+"cancel" = "cancelar";
+
+"delete_subscription_message" = "¿Estás seguro de que quieres borrar esta subscripción de la aplicación?";

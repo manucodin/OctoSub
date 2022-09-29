@@ -29,12 +29,18 @@ extension GenericDAOImp: GenericDAO {
             realm.add(objects, update: .all)
         }
     }
+    
+    func get<T: Object>(identifier: String) -> T? {
+        guard let identifier = try? ObjectId(string: identifier) else { return nil }
+        
+        return realm.object(ofType: T.self, forPrimaryKey: identifier)
+    }
                       
     func getAll<T: RealmFetchable>(type: T.Type) -> Array<T>{
         return Array(realm.objects(type.self))
     }
     
-    func delete<T: Object>(object: T) throws {
+    func delete<T: Object>(object: T) throws {        
         try realm.write {
             realm.delete(object)
         }

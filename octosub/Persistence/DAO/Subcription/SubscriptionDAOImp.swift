@@ -20,6 +20,10 @@ extension SubscriptionDAOImp: SubscriptionDAO {
         try dao.save(object: entity)
     }
     
+    func get(identifier: String) -> SubscriptionEntity? {
+        return dao.get(identifier: identifier)
+    }
+    
     func getAll() -> [SubscriptionEntity] {
         return dao.getAll(type: SubscriptionEntity.self)
     }
