@@ -9,11 +9,9 @@ import SwiftUI
 
 struct UserSubscriptionsView: View {
     @StateObject var viewModel = UserSubscriptionsViewModel()
-    @State var showSubscription: Bool = false
-    @State var selectedSubscription: Subscription? = nil
     
     var body: some View {
-        ZStack {
+        NavigationView {
             VStack {
                 UserSubscriptionsViewHeader(totalAmmount: $viewModel.totalAmountFormatted)
                 ZStack {
@@ -24,43 +22,42 @@ struct UserSubscriptionsView: View {
                             UserSubscriptionViewRow(subscription: subscription)
                                 .listRowSeparator(.hidden)
                                 .onTapGesture {
-                                    showSubscription = true
-                                    selectedSubscription = subscription
+                                    viewModel.select(subscription: subscription)
                                 }
-                                .sheet(isPresented: $showSubscription, onDismiss: {
+                                .sheet(isPresented: $viewModel.showEditSubscription, onDismiss: {
                                     viewModel.loadSubscriptions()
                                 },content: {
-                                    //TODO: - Create subscription
                                     EmptyView()
                                 })
                         }
                         .listStyle(.plain)
                     }
                 }
+            }.toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Text("app_name".localized.capitalized)
+                        .font(.title3)
+                        .foregroundColor(.white)
+                        .bold()
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        viewModel.presentServiceList()
+                    }, label: {
+                        Image(systemName: "plus")
+                            .font(Font.system(.title3))
+                            .foregroundColor(.white)
+                    })
+                }
             }
-        }.toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                Text("Gastos")
-                    .bold()
-                    .foregroundColor(.white)
-                    .font(.title3)
-            }
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button(action: {
-                    viewModel.showAddSubscription = true
-                }, label: {
-                    Image(systemName: "plus")
-                        .tint(.white)
-                }).sheet(isPresented: $viewModel.showAddSubscription, onDismiss: {
-                    viewModel.loadSubscriptions()
-                }, content: {
-                    //TODO: - Subscription Service List
-                    EmptyView()
-                })
-            }
-        }.onAppear {
-            NavigationStyles.applyBlueHeaderStyle()
+        }.sheet(isPresented: $viewModel.showServicesList, content: {
+            SubscriptionServicesListView(showView: $viewModel.showServicesList)
+        }).sheet(isPresented: $viewModel.showEditSubscription, onDismiss: {
             viewModel.loadSubscriptions()
+        }, content: {
+            EmptyView()
+        }).onAppear {
+            NavigationStyles.applyBlueHeaderStyle()
         }
     }
 }

@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  octosub
+
+  Created by Manuel Rodriguez Sebastian on 29/9/22.
+  
+*/
+
+"app_name" = "OctoSub";
+
+"onboarding_step_one" = "Añade tus subscripciones u otros gastos mensuales";
+
+"onboarding_step_two" = "Te avisaremos cuando se vaya a hacer el cobro";
+
+"onboarding_step_three" = "Controla tus gastos mes a mes y consigue ahorrar";
+
+"continue" = "continuar";
+
+"exit" = "salir";
+
+"bills" = "gastos";
+
+"subcription_service_list_title" = "Añadir subscripción";
+
+"your_expense" = "Tu gasto";
+
+"add" = "añadir";

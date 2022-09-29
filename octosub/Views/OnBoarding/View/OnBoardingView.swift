@@ -12,15 +12,15 @@ struct OnBoardingView: View {
     @StateObject private var onBoardingViewModel = OnBoardingViewModel(steps: [
         OnBoardingStep(
             image: "onboarding_step_one",
-            message: "Añade tus subscripciones u otros gastos mensuales"
+            message: "onboarding_step_one".localized
         ),
         OnBoardingStep(
             image: "onboarding_step_one",
-            message: "Te avisaremos cuando se vaya a hacer el cobro"
+            message: "onboarding_step_two".localized
         ),
         OnBoardingStep(
             image: "onboarding_step_one",
-            message: "Controla tus gastos mes a mes y consigue ahorrar"
+            message: "onboarding_step_three".localized
         )
     ])
     @EnvironmentObject private var appSettingsViewModel: AppSettingsViewModel
@@ -38,7 +38,7 @@ struct OnBoardingView: View {
                     }
                 }
                 .tabViewStyle(.page)
-                Button(onBoardingViewModel.showFinal ? "Continuar" : "Omitir") {
+                Button(onBoardingViewModel.showFinal ? "continue".localized.capitalized : "exit".localized.capitalized) {
                     appSettingsViewModel.closeOnBoarding()
                 }
                 .frame(

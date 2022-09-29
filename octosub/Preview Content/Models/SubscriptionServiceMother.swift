@@ -15,7 +15,8 @@ class SubscriptionServiceMother {
             id: "",
             name: "Netflix",
             category: "Entretenimiento",
-            color: "E50914"
+            color: "E50914",
+            icon: "https://w7.pngwing.com/pngs/153/31/png-transparent-netflix-macos-bigsur-icon-thumbnail.png"
         )
     }
     
@@ -24,7 +25,8 @@ class SubscriptionServiceMother {
             id: "",
             name: "Amazon",
             category: "Entretenimiento",
-            color: "FF9900"
+            color: "FF9900",
+            icon: "https://w7.pngwing.com/pngs/153/31/png-transparent-netflix-macos-bigsur-icon-thumbnail.png"
         )
     }
     
@@ -33,7 +35,8 @@ class SubscriptionServiceMother {
             id: "",
             name: "Spotify",
             category: "Entretenimiento",
-            color: "1DB954"
+            color: "1DB954",
+            icon: "https://w7.pngwing.com/pngs/153/31/png-transparent-netflix-macos-bigsur-icon-thumbnail.png"
         )
     }
     static var hbo: SubscriptionService {
@@ -41,7 +44,8 @@ class SubscriptionServiceMother {
             id: "",
             name: "HBO",
             category: "Entretenimiento",
-            color: "000000"
+            color: "000000",
+            icon: "https://w7.pngwing.com/pngs/153/31/png-transparent-netflix-macos-bigsur-icon-thumbnail.png"
         )
     }
 }

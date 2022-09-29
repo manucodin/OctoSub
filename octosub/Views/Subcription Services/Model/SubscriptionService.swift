@@ -12,8 +12,5 @@ struct SubscriptionService: Identifiable {
     let name: String
     let category: String
     let color: String
-    
-    var icon: String {
-        return name.lowercased()
-    }
+    let icon: String
 }

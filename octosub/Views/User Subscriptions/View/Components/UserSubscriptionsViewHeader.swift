@@ -18,6 +18,10 @@ struct UserSubscriptionsViewHeader: View {
                     .foregroundColor(.white)
                     .bold()
                     .font(.system(size: 35))
+                Text("your_expense".localized)
+                    .foregroundColor(Color.white.opacity(0.6))
+                    .bold()
+                    .font(.system(size: 18))
             }
         }.frame(maxHeight: 200)
     }

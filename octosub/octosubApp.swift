@@ -19,12 +19,7 @@ struct octosubApp: App {
                 if appSettingsViewModel.showOnBoarding {
                     OnBoardingView()
                 } else {
-                    NavigationView {
-                        UserSubscriptionsView()
-                            .navigationBarTitleDisplayMode(.inline)
-                    }.onAppear {
-                        NavigationStyles.applyBlueHeaderStyle()
-                    }
+                    UserSubscriptionsView()
                 }
             }.environmentObject(appSettingsViewModel)
         }

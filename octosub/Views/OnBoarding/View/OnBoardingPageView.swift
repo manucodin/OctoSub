@@ -29,7 +29,7 @@ struct OnBoardingPageView_Previews: PreviewProvider {
     static var previews: some View {
         OnBoardingPageView(
             imageName: "onboarding_step_one",
-            message: "Añade las subscripciones a los servicios que uses"
+            message: "onboarding_step_one".localized
         )
     }
 }

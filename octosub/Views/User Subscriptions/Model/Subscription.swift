@@ -22,11 +22,11 @@ struct Subscription: Identifiable {
     }
     
     var notificationMessage: String {
-        if let subscriptionService {
+        if let subscriptionService = subscriptionService{
             return "Tu subscripción de \(subscriptionService.name) está a punto de caducar"
         }
         
-        if let userDescription {
+        if let userDescription = userDescription{
             return userDescription
         }
         
