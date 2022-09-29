@@ -11,6 +11,7 @@ import RealmSwift
 protocol GenericDAO {
     func save(object: Object) throws
     func save(objects: [Object]) throws
+    func get<T: Object>(identifier: String) -> T?
     func getAll<T: RealmFetchable>(type: T.Type) -> Array<T>
     func delete<T: Object>(object: T) throws
 }

@@ -40,6 +40,7 @@ class CreateSubscriptionViewModel: ObservableObject {
     @Published var errorMessage: String = ""
     
     @Published var showMoreOptions: Bool = false
+    @Published var showDeleteAlert: Bool = false
     
     private let subscriptionDataSource: SubscriptionsDataSource
     
@@ -66,6 +67,14 @@ class CreateSubscriptionViewModel: ObservableObject {
         showView = false
     }
     
+    func presentDeletAlert() {
+        showDeleteAlert = true
+    }
+    
+    func closeDeleteAlert() {
+        showDeleteAlert = false
+    }
+    
     @MainActor
     func saveSubscription() {
         let subscription = createSubscription()
@@ -86,6 +95,19 @@ class CreateSubscriptionViewModel: ObservableObject {
                 errorMessage = error.localizedDescription
                 showError = true
             }
+        }
+    }
+    
+    @MainActor
+    func deleteSubscription() {
+        guard let subscription = subscription else { return }
+        
+        do {
+            try subscriptionDataSource.remove(subscription: subscription)
+            dismissView()
+        } catch let error {
+            errorMessage = error.localizedDescription
+            showError = true
         }
     }
     

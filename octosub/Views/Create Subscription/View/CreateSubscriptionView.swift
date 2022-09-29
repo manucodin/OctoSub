@@ -79,21 +79,41 @@ struct CreateSubscriptionView: View {
                             }
                         }
                         
-                        Button(action: {
-                            viewModel.showMoreOptions.toggle()
-                        }, label: {
-                            HStack {
-                                Spacer()
-                                Text(viewModel.showMoreOptions ? "less_options".localized.uppercased() : "more_options".localized.uppercased())
-                                    .bold()
-                                    .tint(.black)
-                                    .font(.callout)
-                                Image(systemName: viewModel.showMoreOptions ? "chevron.up" : "chevron.down")
-                                    .tint(.black)
-                                    .font(.title3)
-                                Spacer()
+                        Group {
+                            if viewModel.isEditing {
+                                Button(action: {
+                                    viewModel.presentDeletAlert()
+                                }, label: {
+                                    HStack {
+                                        Spacer()
+                                        Text("delete".localized.uppercased())
+                                            .bold()
+                                            .tint(.red)
+                                            .font(.callout)
+                                        Image(systemName: "trash")
+                                            .tint(.red)
+                                            .font(.title3)
+                                        Spacer()
+                                    }
+                                })
+                            } else {
+                                Button(action: {
+                                    viewModel.showMoreOptions.toggle()
+                                }, label: {
+                                    HStack {
+                                        Spacer()
+                                        Text(viewModel.showMoreOptions ? "less_options".localized.uppercased() : "more_options".localized.uppercased())
+                                            .bold()
+                                            .tint(.black)
+                                            .font(.callout)
+                                        Image(systemName: viewModel.showMoreOptions ? "chevron.up" : "chevron.down")
+                                            .tint(.black)
+                                            .font(.title3)
+                                        Spacer()
+                                    }
+                                })
                             }
-                        }).padding(.top, 8)
+                        }.padding(.top, 8)
                     }
                 }
             }
@@ -161,7 +181,15 @@ struct CreateSubscriptionView: View {
             sheetPosition = .hidden
             viewModel.showDuration = false
             viewModel.showRecordatory = false
-        }.alert("error_title_create_subscription".localized, isPresented: $viewModel.showError, actions: {}, message: {
+        }.alert("delete".localized.capitalized, isPresented: $viewModel.showDeleteAlert, actions: {
+            Button(role: .destructive, action: {
+                viewModel.deleteSubscription()
+            }, label: {
+                Text("delete".localized.capitalized).foregroundColor(.red)
+            })
+        }, message: {
+            Text("delete_subscription_message".localized)
+        }).alert("error_title_create_subscription".localized, isPresented: $viewModel.showError, actions: {}, message: {
             Text(viewModel.errorMessage)
         })
     }
