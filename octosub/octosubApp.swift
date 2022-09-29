@@ -9,9 +9,19 @@ import SwiftUI
 
 @main
 struct octosubApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @StateObject private var appSettingsViewModel = AppSettingsViewModel()
+
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Group {
+                if appSettingsViewModel.showOnBoarding {
+                    OnBoardingView()
+                } else {
+                    UserSubscriptionsView()
+                }
+            }.environmentObject(appSettingsViewModel)
         }
     }
 }

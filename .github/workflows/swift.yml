@@ -31,8 +31,16 @@ jobs:
         with:
           xcode-version: "14.0"
 
-      - name: Build Package
-        run: swift build -v
-
-      - name: Run tests
-        run: swift test --enable-code-coverage -v
+      - name: Xcode Build
+        uses: sersoft-gmbh/xcodebuild-action@v2
+        with:
+          project: octosub.xcodeproj
+          scheme: octosub
+          action: build
+          
+      - name: Xcode Test
+        uses: sersoft-gmbh/xcodebuild-action@v2
+        with:
+          project: octosub.xcodeproj
+          scheme: octosub
+          action: test
