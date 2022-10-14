@@ -75,31 +75,20 @@ class CreateSubscriptionViewModel: ObservableObject {
         showDeleteAlert = false
     }
     
-    @MainActor
-    func saveSubscription() {
+    func saveSubscription() async {
         let subscription = createSubscription()
         
-        Task {
-            do {
-                try validate()
-                
-                if subscription.recordatory != nil {
-//                    let notificationIdentifier = try await notificationService.createRecordatory(subscription: subscription)
-                    try subscriptionDataSource.save(subscription: subscription, notificationIdentifier: nil)
-                } else {
-                    try subscriptionDataSource.save(subscription: subscription, notificationIdentifier: nil)
-                }
-                
-                showView = false
-            } catch let error {
-                errorMessage = error.localizedDescription
-                showError = true
-            }
+        do {
+            try validate()
+            try await subscriptionDataSource.save(subscription: subscription)
+            showView = false
+        } catch let error {
+            errorMessage = error.localizedDescription
+            showError = true
         }
     }
     
-    @MainActor
-    func deleteSubscription() {
+    func deleteSubscription() async {
         guard let subscription = subscription else { return }
         
         do {

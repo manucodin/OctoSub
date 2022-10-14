@@ -128,7 +128,9 @@ struct CreateSubscriptionView: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 if viewModel.isEditing == false {
                     Button(action: {
-                        viewModel.saveSubscription()
+                        Task {
+                            await viewModel.saveSubscription()
+                        }
                     }, label: {
                         Text("add".localized.capitalized)
                             .tint(.black)
@@ -183,7 +185,9 @@ struct CreateSubscriptionView: View {
             viewModel.showRecordatory = false
         }.alert("delete".localized.capitalized, isPresented: $viewModel.showDeleteAlert, actions: {
             Button(role: .destructive, action: {
-                viewModel.deleteSubscription()
+                Task {
+                    await viewModel.deleteSubscription()
+                }
             }, label: {
                 Text("delete".localized.capitalized).foregroundColor(.red)
             })

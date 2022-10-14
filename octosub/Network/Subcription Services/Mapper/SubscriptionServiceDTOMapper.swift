@@ -13,10 +13,10 @@ class SubscriptionServiceDTOMapper {
         
         return SubscriptionService(
             id: id,
-            name: dto.name,
-            category: dto.category,
-            color: dto.color,
-            icon: dto.icon
+            name: dto.name ?? "",
+            category: dto.category ?? "",
+            color: dto.color ?? "",
+            icon: dto.icon ?? ""
         )
     }
 }
