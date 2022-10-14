@@ -1,0 +1,25 @@
+on:
+  pull_request: 
+    branches: ["master", "develop"]
+  workflow_dispatch:
+jobs:
+  build:
+    name: Build without tests
+    runs-on: macos-latest
+    steps:
+      - name: Check out project
+        uses: actions/checkout@v3
+      - name: Show current Xcode version
+        run: xcodebuild -version
+      - name: Build
+        run: xcodebuild build -project octosub.xcodeproj -scheme octosub | xcpretty
+  test:
+    name: Build with tests
+    runs-on: macos-latest
+    steps:
+      - name: Check out project
+        uses: actions/checkout@v3
+      - name: Show current Xcode version
+        run: xcodebuild -version
+      - name: Build
+        run: xcodebuild test -project octosub.xcodeproj -scheme octosub -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.0' | xcpretty

@@ -10,8 +10,8 @@ import FirebaseFirestoreSwift
 
 struct SubscriptionServiceDTO: Codable {
     @DocumentID var id: String?
-    let name: String
-    let category: String
-    let icon: String
-    let color: String
+    let name: String?
+    let category: String?
+    let icon: String?
+    let color: String?
 }
