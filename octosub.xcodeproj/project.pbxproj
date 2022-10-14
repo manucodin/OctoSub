@@ -66,6 +66,7 @@
 		543C532E28E6135D00B94B9F /* TimePickerDurationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543C532228E6135D00B94B9F /* TimePickerDurationStrategy.swift */; };
 		543C532F28E6135D00B94B9F /* TimeMultiplePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543C532328E6135D00B94B9F /* TimeMultiplePicker.swift */; };
 		543C533028E6135D00B94B9F /* PickerRepresentableValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543C532528E6135D00B94B9F /* PickerRepresentableValue.swift */; };
+		5445B58E28FA236B00D2BD5D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5445B58D28FA236B00D2BD5D /* GoogleService-Info.plist */; };
 		54ADC30F28E5746300725770 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 54ADC30E28E5746300725770 /* Nimble */; };
 		54ADC31328E576B900725770 /* SubscriptionServicesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54ADC31228E576B900725770 /* SubscriptionServicesListViewModel.swift */; };
 		54ADC31628E5770300725770 /* SubscriptionServicesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54ADC31528E5770300725770 /* SubscriptionServicesDataSource.swift */; };
@@ -82,9 +83,11 @@
 		54ADC33C28E5794900725770 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 54ADC33B28E5794900725770 /* FirebaseRemoteConfigSwift */; };
 		54ADC33E28E579D700725770 /* SubscriptionServicesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54ADC33D28E579D700725770 /* SubscriptionServicesListView.swift */; };
 		54ADC34128E57A2700725770 /* SubscriptionServicesListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54ADC34028E57A2700725770 /* SubscriptionServicesListRow.swift */; };
-		54ADC34328E57B5A00725770 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54ADC34228E57B5A00725770 /* GoogleService-Info.plist */; };
 		54D61E6428E5722F005D766F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 54D61E6628E5722F005D766F /* Localizable.strings */; };
 		54D61E6928E57292005D766F /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D61E6828E57292005D766F /* String+Extensions.swift */; };
+		54EA079028FA163D00AFA930 /* NotificationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EA078F28FA163D00AFA930 /* NotificationsService.swift */; };
+		54EA079228FA164F00AFA930 /* NotificationsServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EA079128FA164F00AFA930 /* NotificationsServiceImp.swift */; };
+		54EA079428FA182400AFA930 /* NotificationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EA079328FA182400AFA930 /* NotificationError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,6 +167,7 @@
 		543C532228E6135D00B94B9F /* TimePickerDurationStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePickerDurationStrategy.swift; sourceTree = "<group>"; };
 		543C532328E6135D00B94B9F /* TimeMultiplePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeMultiplePicker.swift; sourceTree = "<group>"; };
 		543C532528E6135D00B94B9F /* PickerRepresentableValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerRepresentableValue.swift; sourceTree = "<group>"; };
+		5445B58D28FA236B00D2BD5D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		54ADC31228E576B900725770 /* SubscriptionServicesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionServicesListViewModel.swift; sourceTree = "<group>"; };
 		54ADC31528E5770300725770 /* SubscriptionServicesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionServicesDataSource.swift; sourceTree = "<group>"; };
 		54ADC31728E5774000725770 /* SubscriptionServicesDataSourceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionServicesDataSourceImp.swift; sourceTree = "<group>"; };
@@ -173,10 +177,12 @@
 		54ADC32E28E578F000725770 /* SubscriptionServiceDTOMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionServiceDTOMapper.swift; sourceTree = "<group>"; };
 		54ADC33D28E579D700725770 /* SubscriptionServicesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionServicesListView.swift; sourceTree = "<group>"; };
 		54ADC34028E57A2700725770 /* SubscriptionServicesListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionServicesListRow.swift; sourceTree = "<group>"; };
-		54ADC34228E57B5A00725770 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		54D61E6528E5722F005D766F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		54D61E6728E57246005D766F /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		54D61E6828E57292005D766F /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		54EA078F28FA163D00AFA930 /* NotificationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsService.swift; sourceTree = "<group>"; };
+		54EA079128FA164F00AFA930 /* NotificationsServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsServiceImp.swift; sourceTree = "<group>"; };
+		54EA079328FA182400AFA930 /* NotificationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,7 +248,6 @@
 				541184D028E4F78A0003CFA6 /* Style */,
 				541184B128E4F2F90003CFA6 /* Extensions */,
 				541184E628E4FB170003CFA6 /* Formatters */,
-				543C52E428E60D5100B94B9F /* Error */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -322,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				541184BB28E4F4260003CFA6 /* Settings */,
+				543C52E428E60D5100B94B9F /* Error */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -512,10 +518,11 @@
 				541184BF28E4F49D0003CFA6 /* Data Sources */,
 				543C52EC28E60F0200B94B9F /* Persistence */,
 				54ADC31928E5777C00725770 /* Network */,
+				54EA078D28FA162600AFA930 /* Services */,
 				5424902E28E4F09200149C08 /* Preview Content */,
 				54D61E6128E571D7005D766F /* Localizables */,
 				5424902C28E4F09200149C08 /* Assets.xcassets */,
-				54ADC34228E57B5A00725770 /* GoogleService-Info.plist */,
+				5445B58D28FA236B00D2BD5D /* GoogleService-Info.plist */,
 			);
 			path = octosub;
 			sourceTree = "<group>";
@@ -578,6 +585,7 @@
 			isa = PBXGroup;
 			children = (
 				543C52E528E60D6600B94B9F /* SubscriptionError.swift */,
+				54EA079328FA182400AFA930 /* NotificationError.swift */,
 			);
 			path = Error;
 			sourceTree = "<group>";
@@ -795,6 +803,23 @@
 			path = Localizables;
 			sourceTree = "<group>";
 		};
+		54EA078D28FA162600AFA930 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				54EA078E28FA162F00AFA930 /* Notifications */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		54EA078E28FA162F00AFA930 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				54EA078F28FA163D00AFA930 /* NotificationsService.swift */,
+				54EA079128FA164F00AFA930 /* NotificationsServiceImp.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -922,7 +947,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5424903028E4F09200149C08 /* Preview Assets.xcassets in Resources */,
-				54ADC34328E57B5A00725770 /* GoogleService-Info.plist in Resources */,
+				5445B58E28FA236B00D2BD5D /* GoogleService-Info.plist in Resources */,
 				54D61E6428E5722F005D766F /* Localizable.strings in Resources */,
 				5424902D28E4F09200149C08 /* Assets.xcassets in Resources */,
 			);
@@ -956,11 +981,13 @@
 				541184C328E4F4BB0003CFA6 /* UserDefaultsDataSourceImp.swift in Sources */,
 				54ADC32F28E578F000725770 /* SubscriptionServiceDTOMapper.swift in Sources */,
 				541184E028E4FA8F0003CFA6 /* SubscriptionService.swift in Sources */,
+				54EA079428FA182400AFA930 /* NotificationError.swift in Sources */,
 				543C52E628E60D6600B94B9F /* SubscriptionError.swift in Sources */,
 				541184ED28E4FBB80003CFA6 /* SubscriptionServiceMother.swift in Sources */,
 				541184DC28E4FA5B0003CFA6 /* Subscription.swift in Sources */,
 				543C530628E60F0200B94B9F /* SubscriptionServiceEntityMapper.swift in Sources */,
 				54ADC32C28E578CF00725770 /* SubscriptionServiceDTO.swift in Sources */,
+				54EA079028FA163D00AFA930 /* NotificationsService.swift in Sources */,
 				543C532E28E6135D00B94B9F /* TimePickerDurationStrategy.swift in Sources */,
 				543C52E928E60EB100B94B9F /* SubscriptionsDataSource.swift in Sources */,
 				541184DA28E4FA340003CFA6 /* UserSubscriptionViewRow.swift in Sources */,
@@ -989,6 +1016,7 @@
 				541184EA28E4FB740003CFA6 /* SubscriptionMother.swift in Sources */,
 				541184BA28E4F3EA0003CFA6 /* OnBoardingStep.swift in Sources */,
 				543C52EB28E60EDA00B94B9F /* SubscriptionsDataSourceImp.swift in Sources */,
+				54EA079228FA164F00AFA930 /* NotificationsServiceImp.swift in Sources */,
 				541184E828E4FB340003CFA6 /* CurrencyFormatter.swift in Sources */,
 				541184E528E4FB040003CFA6 /* DateType.swift in Sources */,
 				541184AC28E4F2240003CFA6 /* OnBoardingView.swift in Sources */,
