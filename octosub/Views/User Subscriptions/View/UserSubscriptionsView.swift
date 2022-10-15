@@ -13,7 +13,11 @@ struct UserSubscriptionsView: View {
     var body: some View {
         NavigationView {
             VStack {
-                UserSubscriptionsViewHeader(totalAmmount: $viewModel.totalAmountFormatted)
+                UserSubscriptionsViewHeader(
+                    totalAmmount: $viewModel.totalAmountFormatted,
+                    currentSubtitle: $viewModel.subtitle,
+                    dateTypeSelected: $viewModel.dateTypeSelected
+                )
                 ZStack {
                     if viewModel.subscriptions.isEmpty {
                         UserSubscriptionsEmptyView()
@@ -57,7 +61,7 @@ struct UserSubscriptionsView: View {
                             .foregroundColor(.white)
                     })
                 }
-            }
+            }.navigationBarTitleDisplayMode(.inline)
         }.sheet(isPresented: $viewModel.showServicesList, onDismiss: {
             viewModel.loadSubscriptions()
         },content: {

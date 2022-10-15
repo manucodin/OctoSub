@@ -67,6 +67,8 @@
 		543C532F28E6135D00B94B9F /* TimeMultiplePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543C532328E6135D00B94B9F /* TimeMultiplePicker.swift */; };
 		543C533028E6135D00B94B9F /* PickerRepresentableValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543C532528E6135D00B94B9F /* PickerRepresentableValue.swift */; };
 		5445B58E28FA236B00D2BD5D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5445B58D28FA236B00D2BD5D /* GoogleService-Info.plist */; };
+		5445B59128FA32F900D2BD5D /* SubscriptionsAmmountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5445B59028FA32F900D2BD5D /* SubscriptionsAmmountService.swift */; };
+		5445B59328FA331300D2BD5D /* SubscriptionsAmmountServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5445B59228FA331300D2BD5D /* SubscriptionsAmmountServiceImp.swift */; };
 		54ADC30F28E5746300725770 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 54ADC30E28E5746300725770 /* Nimble */; };
 		54ADC31328E576B900725770 /* SubscriptionServicesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54ADC31228E576B900725770 /* SubscriptionServicesListViewModel.swift */; };
 		54ADC31628E5770300725770 /* SubscriptionServicesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54ADC31528E5770300725770 /* SubscriptionServicesDataSource.swift */; };
@@ -168,6 +170,8 @@
 		543C532328E6135D00B94B9F /* TimeMultiplePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeMultiplePicker.swift; sourceTree = "<group>"; };
 		543C532528E6135D00B94B9F /* PickerRepresentableValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerRepresentableValue.swift; sourceTree = "<group>"; };
 		5445B58D28FA236B00D2BD5D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5445B59028FA32F900D2BD5D /* SubscriptionsAmmountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsAmmountService.swift; sourceTree = "<group>"; };
+		5445B59228FA331300D2BD5D /* SubscriptionsAmmountServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsAmmountServiceImp.swift; sourceTree = "<group>"; };
 		54ADC31228E576B900725770 /* SubscriptionServicesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionServicesListViewModel.swift; sourceTree = "<group>"; };
 		54ADC31528E5770300725770 /* SubscriptionServicesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionServicesDataSource.swift; sourceTree = "<group>"; };
 		54ADC31728E5774000725770 /* SubscriptionServicesDataSourceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionServicesDataSourceImp.swift; sourceTree = "<group>"; };
@@ -726,6 +730,15 @@
 			path = "Picker Representable Protocol";
 			sourceTree = "<group>";
 		};
+		5445B58F28FA32E600D2BD5D /* Ammount */ = {
+			isa = PBXGroup;
+			children = (
+				5445B59028FA32F900D2BD5D /* SubscriptionsAmmountService.swift */,
+				5445B59228FA331300D2BD5D /* SubscriptionsAmmountServiceImp.swift */,
+			);
+			path = Ammount;
+			sourceTree = "<group>";
+		};
 		54ADC31028E5768D00725770 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -806,6 +819,7 @@
 		54EA078D28FA162600AFA930 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				5445B58F28FA32E600D2BD5D /* Ammount */,
 				54EA078E28FA162F00AFA930 /* Notifications */,
 			);
 			path = Services;
@@ -988,6 +1002,7 @@
 				543C530628E60F0200B94B9F /* SubscriptionServiceEntityMapper.swift in Sources */,
 				54ADC32C28E578CF00725770 /* SubscriptionServiceDTO.swift in Sources */,
 				54EA079028FA163D00AFA930 /* NotificationsService.swift in Sources */,
+				5445B59328FA331300D2BD5D /* SubscriptionsAmmountServiceImp.swift in Sources */,
 				543C532E28E6135D00B94B9F /* TimePickerDurationStrategy.swift in Sources */,
 				543C52E928E60EB100B94B9F /* SubscriptionsDataSource.swift in Sources */,
 				541184DA28E4FA340003CFA6 /* UserSubscriptionViewRow.swift in Sources */,
@@ -1003,6 +1018,7 @@
 				543C530428E60F0200B94B9F /* GenericDAO.swift in Sources */,
 				543C532828E6135D00B94B9F /* TextFieldWithTextView.swift in Sources */,
 				541184C928E4F5C70003CFA6 /* UserPrefencePersitable.swift in Sources */,
+				5445B59128FA32F900D2BD5D /* SubscriptionsAmmountService.swift in Sources */,
 				541184F328E4FCBA0003CFA6 /* UserSubscriptionsEmptyView.swift in Sources */,
 				54ADC31828E5774000725770 /* SubscriptionServicesDataSourceImp.swift in Sources */,
 				543C532C28E6135D00B94B9F /* TimePickerStrategy.swift in Sources */,

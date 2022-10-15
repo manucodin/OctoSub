@@ -59,3 +59,9 @@
 "cancel" = "cancelar";
 
 "delete_subscription_message" = "¿Estás seguro de que quieres borrar esta subscripción de la aplicación?";
+
+"your_expense_by_month" = "Tus gastos este mes";
+
+"your_expense_by_weekly" = "Tus gastos esta semana";
+
+"your_expense_by_total" = "Tus gastos totales";

@@ -17,18 +17,29 @@ class UserSubscriptionsViewModel: ObservableObject {
         
     @Published var totalAmount: Double = .zero
     @Published var totalAmountFormatted: String = ""
+    @Published var subtitle: String = ""
+    
+    @Published var dateTypeSelected: DateType = .monthly
     
     private let numberFormatter = CurrencyFormatter()
     private let subscriptionsDataSource: SubscriptionsDataSource
+    private let ammountService: SubscriptionsAmmountService
     
-    init(subscriptionsDataSource: SubscriptionsDataSource = SubscriptionsDataSourceImp()) {
+    private var subscribers: Set<AnyCancellable> = []
+    
+    init(subscriptionsDataSource: SubscriptionsDataSource = SubscriptionsDataSourceImp(), ammountService: SubscriptionsAmmountService = SubscriptionsAmmountServiceImp()) {
         self.subscriptionsDataSource = subscriptionsDataSource
-        self.totalAmountFormatted = numberFormatter.string(from: NSNumber(value: totalAmount)) ?? ""
+        self.ammountService = ammountService
+        calculateTotalAmmount(withDateType: dateTypeSelected)
+        
+        $dateTypeSelected.sink { [weak self] valueSelected in
+            self?.calculateTotalAmmount(withDateType: valueSelected)
+        }.store(in: &subscribers)
     }
     
     public func loadSubscriptions() {
         subscriptions = subscriptionsDataSource.getAll()
-        calculateTotalAmmount()
+        calculateTotalAmmount(withDateType: .monthly)
     }
     
     public func presentServiceList() {
@@ -44,9 +55,8 @@ class UserSubscriptionsViewModel: ObservableObject {
         self.selectedSubscription = subscription
     }
     
-    private func calculateTotalAmmount() {
-        let prices = subscriptions.map{ $0.price }
-        totalAmount = prices.reduce(0, +)
+    private func calculateTotalAmmount(withDateType dateType: DateType) {
+        totalAmount = ammountService.calculateAmmount(withDateType: dateType, userSubscriptions: subscriptions)
         totalAmountFormatted = CurrencyFormatter().string(from: NSNumber(value:totalAmount)) ?? ""
     }
 }

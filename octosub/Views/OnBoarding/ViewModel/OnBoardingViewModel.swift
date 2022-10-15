@@ -21,7 +21,9 @@ class OnBoardingViewModel: ObservableObject {
         
     init(steps: [OnBoardingStep]) {
         self.steps = steps
-        $currentIndex.sink { currentIndex in
+        $currentIndex.sink { [weak self] currentIndex in
+            guard let self = self else { return }
+            
             self.showFinal = currentIndex == self.numberSteps - 1
         }.store(in: &subscribers)
     }
