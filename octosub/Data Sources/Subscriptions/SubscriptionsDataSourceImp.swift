@@ -10,10 +10,12 @@ import Foundation
 class SubscriptionsDataSourceImp {
     private let dao: SubscriptionDAO
     private let notificationsService: NotificationsService
+    private let countDownService: SubscriptionCountdownService
     
-    init(dao: SubscriptionDAO = SubscriptionDAOImp(), notificationsService: NotificationsService = NotificationsServiceImp()) {
+    init(dao: SubscriptionDAO = SubscriptionDAOImp(), notificationsService: NotificationsService = NotificationsServiceImp(), countDownService: SubscriptionCountdownService = SubscriptionCountdownServiceImp()) {
         self.dao = dao
         self.notificationsService = notificationsService
+        self.countDownService = countDownService
     }
 }
 
@@ -22,8 +24,9 @@ extension SubscriptionsDataSourceImp: SubscriptionsDataSource {
     @MainActor
     func save(subscription: Subscription) async throws {
         let notificationIdentifier = try await notificationsService.createRecordatory(subscription: subscription)
-        let entity = SubscriptionEntityMapper.transform(subscription: subscription, notificationIdentifier: notificationIdentifier)
+        let entity = SubscriptionEntityMapper.transform(subscription: subscription.updating(notificationIdentifier))
         try dao.save(entity: entity)
+        countDownService.createCountDown(subscription: subscription)
     }
     
     func getAll() -> [Subscription] {
@@ -33,7 +36,8 @@ extension SubscriptionsDataSourceImp: SubscriptionsDataSource {
         return subscriptions
     }
     
-    func remove(subscription: Subscription) throws {
+    @MainActor
+    func remove(subscription: Subscription) async throws {
         guard let entity = dao.get(identifier: subscription.id) else { return }
         
         if let notificationIdentifier = entity.notificationIdentifier {

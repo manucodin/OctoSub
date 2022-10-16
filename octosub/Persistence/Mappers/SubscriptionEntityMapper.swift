@@ -8,19 +8,27 @@
 import Foundation
 
 class SubscriptionEntityMapper {
-    static func transform(subscription: Subscription, notificationIdentifier: String? = nil) -> SubscriptionEntity {
+    static func transform(subscription: Subscription) -> SubscriptionEntity {
         let subscriptionServiceEntity = SubscriptionServiceEntityMapper.transform(subscriptionService: subscription.subscriptionService)
+        
         return SubscriptionEntity(
             subscriptionService: subscriptionServiceEntity,
             name: subscription.name,
             userDescription: subscription.userDescription,
             price: subscription.price,
-            date: subscription.creationDate,
-            durationValue: subscription.duration?.value,
+            creationTimestamp: subscription.creationDate.timestamp,
+            durationValue: subscription.duration?.numberOfDays,
             durationType: subscription.duration?.dateType.rawValue,
-            repetionValue: subscription.recordatory?.value,
-            repetionType: subscription.recordatory?.dateType.rawValue,
-            notificationIdentifier: notificationIdentifier
+            durationTimestamp: subscription.endDate?.timestamp,
+            paymentFrequencyValue: subscription.paymentFrequency?.numberOfDays,
+            paymentFrequencyType: subscription.paymentFrequency?.dateType.rawValue,
+            lastPaymentTimestamp: subscription.lastPaymentDate?.timestamp ?? subscription.creationDate.timestamp,
+            nextPaymentTimestamp: subscription.nextPaymentDate?.timestamp,
+            userRecordatoryValue: subscription.userRecordatory?.numberOfDays,
+            userRecordatoryType: subscription.userRecordatory?.dateType.rawValue,
+            userRecordatoryTimestamp: subscription.userRecordatoryDate?.timestamp,
+            notificationIdentifier: subscription.notificationIdentifier,
+            countdown: subscription.countDown
         )
     }
     
@@ -29,23 +37,48 @@ class SubscriptionEntityMapper {
         
         var duration: DateDuration?
         if let durationValue = entity.durationValue, let durationStringType = entity.durationType, let dateType = DateType(rawValue: (durationStringType)) {
-            duration = DateDuration(value: durationValue, dateType: dateType)
+            duration = DateDuration(numberOfDays: durationValue, dateType: dateType)
         }
         
-        var recordatory: DateDuration?
-        if let recordatoryValue = entity.repetionValue, let recordatoryStringValue = entity.repetionType, let dateType = DateType(rawValue: (recordatoryStringValue)) {
-            recordatory = DateDuration(value: recordatoryValue, dateType: dateType)
+        var paymentFrequency: DateDuration?
+        if let paymentFrequencyValue = entity.paymentFrequencyValue, let paymentFrequencyStringValue = entity.paymentFrequencyType, let dateType = DateType(rawValue: paymentFrequencyStringValue) {
+            paymentFrequency = DateDuration(numberOfDays: paymentFrequencyValue, dateType: dateType)
         }
         
+        var userRecodatory: DateDuration?
+        if let recordatoryValue = entity.userRecordatoryValue, let recordatoryStringValue = entity.userRecordatoryType, let dateType = DateType(rawValue: (recordatoryStringValue)) {
+            userRecodatory = DateDuration(numberOfDays: recordatoryValue, dateType: dateType)
+        }
+        
+        var lastPaymentDate: Date?
+        if let lastPaymentTimestamp = entity.lastPaymentTimestamp {
+            lastPaymentDate = Date(timeIntervalSince1970: Double(lastPaymentTimestamp))
+        }
+        
+        var nextPaymentDate: Date?
+        if let nextPaymentDateTimestamp = entity.nextPaymentTimestamp {
+            nextPaymentDate = Date(timeIntervalSince1970: Double(nextPaymentDateTimestamp))
+        }
+        
+        var userRecordatoryDate: Date?
+        if let userRecordatoryDateTimestamp = entity.userRecordatoryTimestamp {
+            userRecordatoryDate = Date(timeIntervalSince1970: Double(userRecordatoryDateTimestamp))
+        }
         return Subscription(
             id: entity.id.stringValue,
             subscriptionService: subscriptionService,
             name: entity.name,
             userDescription: entity.userDescription,
             price: entity.price,
-            creationDate: entity.creationDate,
+            creationDate: Date(timeIntervalSince1970: Double(entity.creationTimestamp)),
             duration: duration,
-            recordatory: recordatory
+            paymentFrequency: paymentFrequency,
+            lastPaymentDate: lastPaymentDate,
+            nextPaymentDate: nextPaymentDate,
+            userRecordatory: userRecodatory,
+            userRecordatoryDate: userRecordatoryDate,
+            notificationIdentifier: entity.notificationIdentifier,
+            countDown: entity.countdown
         )
     }
 }

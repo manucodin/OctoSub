@@ -10,5 +10,5 @@ import Foundation
 protocol SubscriptionsDataSource {
     func save(subscription: Subscription) async throws
     func getAll() -> [Subscription]
-    func remove(subscription: Subscription) throws
+    func remove(subscription: Subscription) async throws
 }

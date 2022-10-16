@@ -21,10 +21,10 @@ class NotificationsServiceImp {
     }
     
     private func addNotification(subscription: Subscription) -> String? {
-        guard let recordatory = subscription.recordatory else { return nil }
+        guard let userRecordatory = subscription.userRecordatory else { return nil }
         
         let notificationIdentifier = UUID().uuidString
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: recordatory.timeInterval, repeats: true)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: userRecordatory.timeInterval, repeats: true)
         
         let content = generateNotificationContent(subscription: subscription)
         let request = UNNotificationRequest(identifier: notificationIdentifier, content: content, trigger: trigger)
@@ -50,6 +50,8 @@ class NotificationsServiceImp {
 
 extension NotificationsServiceImp: NotificationsService {
     func createRecordatory(subscription: Subscription) async throws -> String? {
+        guard subscription.userRecordatory != nil else { return nil }
+        
         if await hasAuthorization() {
             return addNotification(subscription: subscription)
         } else {

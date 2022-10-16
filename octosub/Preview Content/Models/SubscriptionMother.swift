@@ -16,8 +16,11 @@ class SubscriptionMother {
             userDescription: "",
             price: 10.0,
             creationDate: Date(),
-            duration: DateDuration(value: 1, dateType: .monthly),
-            recordatory: DateDuration(value: 1, dateType: .weekly)
+            duration: DateDuration(numberOfDays: 1, dateType: .monthly),
+            paymentFrequency: DateDuration(numberOfDays: 1, dateType: .monthly),
+            userRecordatory: DateDuration(numberOfDays: 1, dateType: .weekly),
+            notificationIdentifier: nil,
+            countDown: nil
         )
     }
     
@@ -28,8 +31,11 @@ class SubscriptionMother {
             name: "",
             userDescription: "",
             price: 10.0, creationDate: Date(),
-            duration: DateDuration(value: 1, dateType: .monthly),
-            recordatory: DateDuration(value: 1, dateType: .weekly)
+            duration: DateDuration(numberOfDays: 1, dateType: .monthly),
+            paymentFrequency: DateDuration(numberOfDays: 1, dateType: .monthly),
+            userRecordatory: DateDuration(numberOfDays: 1, dateType: .weekly),
+            notificationIdentifier: nil,
+            countDown: nil
         )
     }
     
@@ -41,8 +47,11 @@ class SubscriptionMother {
             userDescription: "",
             price: 10.0,
             creationDate: Date(),
-            duration: DateDuration(value: 1, dateType: .monthly),
-            recordatory: DateDuration(value: 1, dateType: .weekly)
+            duration: DateDuration(numberOfDays: 1, dateType: .monthly),
+            paymentFrequency: DateDuration(numberOfDays: 1, dateType: .monthly),
+            userRecordatory: DateDuration(numberOfDays: 1, dateType: .weekly),
+            notificationIdentifier: nil,
+            countDown: nil
         )
     }
     
@@ -54,8 +63,11 @@ class SubscriptionMother {
             userDescription: "",
             price: 10.0,
             creationDate: Date(),
-            duration: DateDuration(value: 1, dateType: .monthly),
-            recordatory: DateDuration(value: 1, dateType: .weekly)
+            duration: DateDuration(numberOfDays: 1, dateType: .monthly),
+            paymentFrequency: DateDuration(numberOfDays: 1, dateType: .monthly),
+            userRecordatory: DateDuration(numberOfDays: 1, dateType: .weekly),
+            notificationIdentifier: nil,
+            countDown: nil
         )
     }
 }

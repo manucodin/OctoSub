@@ -49,6 +49,22 @@ struct CreateSubscriptionView: View {
                                 Divider().foregroundColor(.separator).frame(height: 1)
                                 VStack {
                                     HStack {
+                                        Text("payment_frequency".localized.capitalized)
+                                            .bold()
+                                            .foregroundColor(.black)
+                                        Spacer()
+                                        Text(viewModel.paymentFrequency == nil ? "never".localized.capitalized : viewModel.paymentFrequency?.formattedDuration ?? "")
+                                            .foregroundColor(.black)
+                                    }.onTapGesture {
+                                        sheetPosition = .dynamic
+                                        viewModel.showDuration = false
+                                        viewModel.showPaymentFrequency = true
+                                        viewModel.showUserRecordatory = false
+                                    }
+                                }
+                                Divider().foregroundColor(.separator).frame(height: 1)
+                                VStack {
+                                    HStack {
                                         Text("duration".localized.capitalized)
                                             .bold()
                                             .foregroundColor(.black)
@@ -58,7 +74,8 @@ struct CreateSubscriptionView: View {
                                     }.onTapGesture {
                                         sheetPosition = .dynamic
                                         viewModel.showDuration = true
-                                        viewModel.showRecordatory = false
+                                        viewModel.showPaymentFrequency = false
+                                        viewModel.showUserRecordatory = false
                                     }
                                 }
                                 Divider().foregroundColor(.separator).frame(height: 1)
@@ -68,12 +85,13 @@ struct CreateSubscriptionView: View {
                                             .bold()
                                             .foregroundColor(.black)
                                         Spacer()
-                                        Text(viewModel.recordatory == nil ? "never".localized.capitalized : viewModel.recordatory?.formattedDuration ?? "")
+                                        Text(viewModel.userRecordatory == nil ? "never".localized.capitalized : viewModel.userRecordatory?.formattedDuration ?? "")
                                             .foregroundColor(.black)
                                     }.onTapGesture {
                                         sheetPosition = .dynamic
                                         viewModel.showDuration = false
-                                        viewModel.showRecordatory = true
+                                        viewModel.showPaymentFrequency = false
+                                        viewModel.showUserRecordatory = true
                                     }
                                 }
                             }
@@ -154,10 +172,19 @@ struct CreateSubscriptionView: View {
                     .onTapGesture {
                         sheetPosition = .hidden
                         viewModel.showDuration = false
-                        viewModel.showRecordatory = false
+                        viewModel.showUserRecordatory = false
                     }
             }.padding()
         }, mainContent: {
+            if viewModel.showPaymentFrequency {
+                TimeMultiplePicker(
+                    selection: $viewModel.paymentFrequency,
+                    strategy: TimePickerRepetitionStrategy(
+                        firstValues: Array(1..<31),
+                        secondValues: DateType.allCases
+                    )
+                )
+            }
             if viewModel.showDuration {
                 TimeMultiplePicker(
                     selection: $viewModel.duration,
@@ -167,10 +194,9 @@ struct CreateSubscriptionView: View {
                     )
                 )
             }
-            
-            if viewModel.showRecordatory {
+            if viewModel.showUserRecordatory {
                 TimeMultiplePicker(
-                    selection: $viewModel.recordatory,
+                    selection: $viewModel.userRecordatory,
                     strategy: TimePickerRepetitionStrategy(
                         firstValues: Array(1..<31),
                         secondValues: DateType.allCases
@@ -182,7 +208,7 @@ struct CreateSubscriptionView: View {
         .onTapGesture {
             sheetPosition = .hidden
             viewModel.showDuration = false
-            viewModel.showRecordatory = false
+            viewModel.showUserRecordatory = false
         }.alert("delete".localized.capitalized, isPresented: $viewModel.showDeleteAlert, actions: {
             Button(role: .destructive, action: {
                 Task {

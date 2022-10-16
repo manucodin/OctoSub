@@ -29,12 +29,14 @@ class CreateSubscriptionViewModel: ObservableObject {
     @Published var subscriptionPrice: Double = .zero
     @Published var subscriptionDate: Date = Date()
     @Published var duration: DateDuration? = nil
-    @Published var recordatory: DateDuration? = nil
+    @Published var paymentFrequency: DateDuration? = nil
+    @Published var userRecordatory: DateDuration? = nil
 
     @Published var isEditing: Bool = false
     
     @Published var showDuration: Bool = false
-    @Published var showRecordatory: Bool = false
+    @Published var showPaymentFrequency: Bool = false
+    @Published var showUserRecordatory: Bool = false
     
     @Published var showError: Bool = false
     @Published var errorMessage: String = ""
@@ -42,6 +44,7 @@ class CreateSubscriptionViewModel: ObservableObject {
     @Published var showMoreOptions: Bool = false
     @Published var showDeleteAlert: Bool = false
     
+    private var subscribers: Set<AnyCancellable> = []
     private let subscriptionDataSource: SubscriptionsDataSource
     
     init(subscription: Subscription? = nil, subscriptionService: SubscriptionService, showView: Binding<Bool> ,subscriptionDataSource: SubscriptionsDataSource = SubscriptionsDataSourceImp()) {
@@ -52,9 +55,8 @@ class CreateSubscriptionViewModel: ObservableObject {
         self.subscriptionName = subscription?.name ?? subscriptionService.name
         self.userDescription = subscription?.userDescription ?? ""
         self.duration = subscription?.duration
-        self.recordatory = subscription?.recordatory
-        self.duration = subscription?.duration
-        self.recordatory = subscription?.recordatory
+        self.userRecordatory = subscription?.userRecordatory
+        self.paymentFrequency = subscription?.paymentFrequency
         
         self._showView = showView
         
@@ -92,7 +94,7 @@ class CreateSubscriptionViewModel: ObservableObject {
         guard let subscription = subscription else { return }
         
         do {
-            try subscriptionDataSource.remove(subscription: subscription)
+            try await subscriptionDataSource.remove(subscription: subscription)
             dismissView()
         } catch let error {
             errorMessage = error.localizedDescription
@@ -101,6 +103,10 @@ class CreateSubscriptionViewModel: ObservableObject {
     }
     
     private func createSubscription() -> Subscription {
+        let durationDate = Date(timeIntervalSince1970: Double(subscriptionDate.timestamp) + Double(duration?.timeInterval ?? 0))
+        let nextPaymentDate = Date(timeIntervalSince1970: Double(subscriptionDate.timestamp) + Double(paymentFrequency?.timeInterval ?? 0))
+        let userRecordatoryDate = Date(timeIntervalSince1970: Double(nextPaymentDate.timestamp) - Double(userRecordatory?.timeInterval ?? 0))
+        
         return Subscription(
             id: "",
             subscriptionService: subscriptionService,
@@ -109,7 +115,12 @@ class CreateSubscriptionViewModel: ObservableObject {
             price: subscriptionPrice,
             creationDate: subscriptionDate,
             duration: duration,
-            recordatory: recordatory
+            durationDate: durationDate,
+            paymentFrequency: paymentFrequency,
+            lastPaymentDate: subscriptionDate,
+            nextPaymentDate: nextPaymentDate,
+            userRecordatory: userRecordatory,
+            userRecordatoryDate: userRecordatoryDate
         )
     }
     

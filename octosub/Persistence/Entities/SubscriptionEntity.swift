@@ -14,24 +14,55 @@ class SubscriptionEntity: Object {
     @Persisted var name: String?
     @Persisted var userDescription: String?
     @Persisted var price: Double
-    @Persisted var creationDate: Date
+    @Persisted var creationTimestamp: Int
     @Persisted var durationValue: Int?
     @Persisted var durationType: String?
-    @Persisted var repetionValue: Int?
-    @Persisted var repetionType: String?
+    @Persisted var endTimestamp: Int?
+    @Persisted var paymentFrequencyValue: Int?
+    @Persisted var paymentFrequencyType: String?
+    @Persisted var lastPaymentTimestamp: Int?
+    @Persisted var nextPaymentTimestamp: Int?
+    @Persisted var userRecordatoryValue: Int?
+    @Persisted var userRecordatoryType: String?
+    @Persisted var userRecordatoryTimestamp: Int?
     @Persisted var notificationIdentifier: String?
+    @Persisted var countdown: Int?
     
-    convenience init(subscriptionService: SubscriptionServiceEntity?, name: String?, userDescription: String?, price: Double, date: Date, durationValue: Int?, durationType: String?, repetionValue: Int?, repetionType: String?, notificationIdentifier: String?) {
-        self.init()
-        self.subscriptionService = subscriptionService
-        self.name = name
-        self.userDescription = userDescription
-        self.price = price
-        self.creationDate = date
-        self.durationValue = durationValue
-        self.durationType = durationType
-        self.repetionValue = repetionValue
-        self.repetionType = repetionType
-        self.notificationIdentifier = notificationIdentifier
+    convenience init(
+        subscriptionService: SubscriptionServiceEntity?,
+        name: String?,
+        userDescription: String?,
+        price: Double,
+        creationTimestamp: Int,
+        durationValue: Int?,
+        durationType: String?,
+        durationTimestamp: Int?,
+        paymentFrequencyValue: Int?,
+        paymentFrequencyType: String?,
+        lastPaymentTimestamp: Int?,
+        nextPaymentTimestamp: Int?,
+        userRecordatoryValue: Int?,
+        userRecordatoryType: String?,
+        userRecordatoryTimestamp: Int?,
+        notificationIdentifier: String?,
+        countdown: Int?) {
+            self.init()
+            self.subscriptionService = subscriptionService
+            self.name = name
+            self.userDescription = userDescription
+            self.price = price
+            self.creationTimestamp = creationTimestamp
+            self.durationValue = durationValue
+            self.durationType = durationType
+            self.endTimestamp = durationTimestamp
+            self.paymentFrequencyValue = paymentFrequencyValue
+            self.paymentFrequencyType = paymentFrequencyType
+            self.lastPaymentTimestamp = lastPaymentTimestamp
+            self.nextPaymentTimestamp = nextPaymentTimestamp
+            self.userRecordatoryValue = userRecordatoryValue
+            self.userRecordatoryType = userRecordatoryType
+            self.userRecordatoryTimestamp = userRecordatoryTimestamp
+            self.notificationIdentifier = notificationIdentifier
+            self.countdown = countdown
     }
 }
