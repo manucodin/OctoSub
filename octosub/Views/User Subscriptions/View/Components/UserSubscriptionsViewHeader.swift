@@ -12,27 +12,23 @@ struct UserSubscriptionsViewHeader: View {
     @Binding var currentSubtitle: String
     @Binding var dateTypeSelected: DateType
 
+    let options: [DateType] = [.monthly, .weekly]
+    
     var body: some View {
         ZStack {
             Color.blueHeader.ignoresSafeArea()
-            
             VStack {
                 HStack {
-                    Button(action: {
-                        dateTypeSelected = .monthly
-                    }, label: {
-                        Text("Mensual")
-                            .bold()
-                            .foregroundColor(.white)
-                    })
-                    Button(action: {
-                        dateTypeSelected = .weekly
-                    }, label: {
-                        Text("Semanal").bold().foregroundColor(.white)
-                    })
+                    Picker("", selection: $dateTypeSelected) {
+                        ForEach(options, id: \.self) { option in
+                            Text(option.filterTitle)
+                        }
+                    }
+                    .frame(width: 200)
+                    .pickerStyle(.segmented)
+                    .padding()
                     Spacer()
-                }.padding(.horizontal, 16).padding(.top, 8)
-                Spacer()
+                }
                 Text(totalAmmount)
                     .foregroundColor(.white)
                     .bold()
@@ -43,7 +39,15 @@ struct UserSubscriptionsViewHeader: View {
                     .font(.system(size: 18))
                 Spacer()
             }
-        }.frame(maxHeight: 200)
+        }
+        .frame(maxHeight: 200)
+        .onAppear {
+            UISegmentedControl.appearance().selectedSegmentIndex = 0
+            UISegmentedControl.appearance().backgroundColor = UIColor.white.withAlphaComponent(0.6)
+            UISegmentedControl.appearance().selectedSegmentTintColor = .white
+            UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.blueHeader], for: .selected)
+            UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.black.withAlphaComponent(0.8)], for: .normal)
+        }
     }
 }
 

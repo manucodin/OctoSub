@@ -73,3 +73,19 @@
 "same_day" = "Mismo día";
 
 "before" = "Antes";
+
+"daily" = "Diario";
+
+"weekly" = "Semanal";
+
+"monthly" = "Mensual";
+
+"annually" = "Anual";
+
+"daily_picker_option" = "Dia(s)";
+
+"weekly_picker_option" = "Semana(s)";
+
+"monthy_picker_option" = "Mes(es)";
+
+"annualy_picker_option" = "Año(s)";

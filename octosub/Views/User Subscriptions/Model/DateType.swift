@@ -24,10 +24,19 @@ enum DateType: String, Comparable, CaseIterable, Equatable, PickerRepresentableV
     
     var stringValue: String {
         switch self {
-        case .daily: return "Dia(s)"
-        case .weekly: return "Semana(s)"
-        case .monthly: return "Mes(es)"
-        case .annually: return "Año(s)"
+        case .daily: return "daily_picker_option".localized
+        case .weekly: return "weekly_picker_option".localized
+        case .monthly: return "monthy_picker_option".localized
+        case .annually: return "annualy_picker_option".localized
+        }
+    }
+    
+    var filterTitle: String {
+        switch self {
+        case .daily: return "daily".localized.capitalized
+        case .weekly: return "weekly".localized.capitalized
+        case .monthly: return "monthly".localized.capitalized
+        case .annually: return "annually".localized.capitalized
         }
     }
     
