@@ -36,7 +36,7 @@ class TimePickerRepetitionStrategy: TimePickerStrategy{
         }
     }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) -> DateDuration {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) -> DateDuration? {
         let dateType = DateType(intValue: pickerView.selectedRow(inComponent: 2))
         let value = firstValues[pickerView.selectedRow(inComponent: 1)] as? Int ?? .zero
         

@@ -14,6 +14,10 @@ class CreateSubscriptionViewModel: ObservableObject {
     let subscription: Subscription?
     let subscriptionService: SubscriptionService
     
+    let repetitionPicketStrategy: TimePickerStrategy
+    let durationPickerStrategy: TimePickerStrategy
+    let rememberPickerStrategy: TimePickerStrategy
+
     var iconURL: String {
         if let subscription = subscription {
             return subscription.subscriptionService.icon
@@ -60,9 +64,22 @@ class CreateSubscriptionViewModel: ObservableObject {
         
         self._showView = showView
         
+        self.repetitionPicketStrategy = TimePickerRepetitionStrategy(firstValues: Array(1..<31), secondValues: DateType.allCases)
+        self.durationPickerStrategy = TimePickerDurationStrategy(firstValues: Array(1..<31), secondValues: DateType.allCases)
+        
+        var rememberFirstValues: [PickerRepresentableValue] = [RememberOptions.never, RememberOptions.sameDay]
+        rememberFirstValues.append(contentsOf: Array(1..<31).map({ RememberOptions.unit(value: $0) }))
+        
+        var rememberSecondValues: [PickerRepresentableValue] = [String.empty]
+        rememberSecondValues.append(contentsOf: DateType.allCases)
+        
+        let rememberThirdValues: [PickerRepresentableValue] = [String.empty, "before".localized.capitalized]
+        
+        self.rememberPickerStrategy = TimePickerRememberStrategy(firstValues: rememberFirstValues, secondValues: rememberSecondValues, thridValues: rememberThirdValues)
+
         if let subscription = subscription {
             loadSubscription(subscription: subscription)
-        }
+        }        
     }
     
     func dismissView() {

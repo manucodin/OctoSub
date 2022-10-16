@@ -29,7 +29,7 @@ struct TimeMultiplePicker: UIViewRepresentable {
     final class Coordinator: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
         let selection: Binding<DateDuration?>
         let strategy: TimePickerStrategy
-        var onSelect: ((DateDuration) -> Void)? = nil
+        var onSelect: ((DateDuration?) -> Void)? = nil
         
         init(selection: Binding<DateDuration?>, strategy: TimePickerStrategy) {
             self.selection = selection

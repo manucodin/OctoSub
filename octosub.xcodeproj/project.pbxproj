@@ -67,8 +67,8 @@
 		543C532F28E6135D00B94B9F /* TimeMultiplePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543C532328E6135D00B94B9F /* TimeMultiplePicker.swift */; };
 		543C533028E6135D00B94B9F /* PickerRepresentableValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543C532528E6135D00B94B9F /* PickerRepresentableValue.swift */; };
 		5445B58E28FA236B00D2BD5D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5445B58D28FA236B00D2BD5D /* GoogleService-Info.plist */; };
-		5445B59128FA32F900D2BD5D /* SubscriptionsAmmountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5445B59028FA32F900D2BD5D /* SubscriptionsAmmountService.swift */; };
-		5445B59328FA331300D2BD5D /* SubscriptionsAmmountServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5445B59228FA331300D2BD5D /* SubscriptionsAmmountServiceImp.swift */; };
+		547078B628FC31610050C42F /* TimePickerRememberStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547078B528FC31610050C42F /* TimePickerRememberStrategy.swift */; };
+		547078B928FC33C40050C42F /* RememberOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547078B828FC33C40050C42F /* RememberOptions.swift */; };
 		5498237128FC022D00247080 /* SubscriptionCountdownService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5498237028FC022D00247080 /* SubscriptionCountdownService.swift */; };
 		5498237328FC025100247080 /* SubscriptionCountdownServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5498237228FC025100247080 /* SubscriptionCountdownServiceImp.swift */; };
 		5498237528FC151E00247080 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5498237428FC151E00247080 /* Date+Extensions.swift */; };
@@ -173,8 +173,8 @@
 		543C532328E6135D00B94B9F /* TimeMultiplePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeMultiplePicker.swift; sourceTree = "<group>"; };
 		543C532528E6135D00B94B9F /* PickerRepresentableValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerRepresentableValue.swift; sourceTree = "<group>"; };
 		5445B58D28FA236B00D2BD5D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		5445B59028FA32F900D2BD5D /* SubscriptionsAmmountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsAmmountService.swift; sourceTree = "<group>"; };
-		5445B59228FA331300D2BD5D /* SubscriptionsAmmountServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsAmmountServiceImp.swift; sourceTree = "<group>"; };
+		547078B528FC31610050C42F /* TimePickerRememberStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerRememberStrategy.swift; sourceTree = "<group>"; };
+		547078B828FC33C40050C42F /* RememberOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RememberOptions.swift; sourceTree = "<group>"; };
 		5498237028FC022D00247080 /* SubscriptionCountdownService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionCountdownService.swift; sourceTree = "<group>"; };
 		5498237228FC025100247080 /* SubscriptionCountdownServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionCountdownServiceImp.swift; sourceTree = "<group>"; };
 		5498237428FC151E00247080 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
@@ -578,7 +578,6 @@
 		543C52DD28E60B3500B94B9F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				543C531228E6131C00B94B9F /* Components */,
 				543C52E028E60BC300B94B9F /* CreateSubscriptionView.swift */,
 			);
 			path = View;
@@ -665,13 +664,6 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
-		543C531228E6131C00B94B9F /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		543C531328E6135D00B94B9F /* View Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -712,8 +704,9 @@
 		543C531E28E6135D00B94B9F /* TimeMultiple Picker */ = {
 			isa = PBXGroup;
 			children = (
-				543C531F28E6135D00B94B9F /* Strategies */,
 				543C532328E6135D00B94B9F /* TimeMultiplePicker.swift */,
+				547078B728FC33BA0050C42F /* Enums */,
+				543C531F28E6135D00B94B9F /* Strategies */,
 				543C532428E6135D00B94B9F /* Picker Representable Protocol */,
 			);
 			path = "TimeMultiple Picker";
@@ -725,6 +718,7 @@
 				543C532028E6135D00B94B9F /* TimePickerStrategy.swift */,
 				543C532128E6135D00B94B9F /* TimePickerRepetitionStrategy.swift */,
 				543C532228E6135D00B94B9F /* TimePickerDurationStrategy.swift */,
+				547078B528FC31610050C42F /* TimePickerRememberStrategy.swift */,
 			);
 			path = Strategies;
 			sourceTree = "<group>";
@@ -737,13 +731,12 @@
 			path = "Picker Representable Protocol";
 			sourceTree = "<group>";
 		};
-		5445B58F28FA32E600D2BD5D /* Ammount */ = {
+		547078B728FC33BA0050C42F /* Enums */ = {
 			isa = PBXGroup;
 			children = (
-				5445B59028FA32F900D2BD5D /* SubscriptionsAmmountService.swift */,
-				5445B59228FA331300D2BD5D /* SubscriptionsAmmountServiceImp.swift */,
+				547078B828FC33C40050C42F /* RememberOptions.swift */,
 			);
-			path = Ammount;
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		5498236F28FC01DA00247080 /* Subscription Countdown */ = {
@@ -836,7 +829,6 @@
 			isa = PBXGroup;
 			children = (
 				5498236F28FC01DA00247080 /* Subscription Countdown */,
-				5445B58F28FA32E600D2BD5D /* Ammount */,
 				54EA078E28FA162F00AFA930 /* Notifications */,
 			);
 			path = Services;
@@ -1019,7 +1011,6 @@
 				543C530628E60F0200B94B9F /* SubscriptionServiceEntityMapper.swift in Sources */,
 				54ADC32C28E578CF00725770 /* SubscriptionServiceDTO.swift in Sources */,
 				54EA079028FA163D00AFA930 /* NotificationsService.swift in Sources */,
-				5445B59328FA331300D2BD5D /* SubscriptionsAmmountServiceImp.swift in Sources */,
 				543C532E28E6135D00B94B9F /* TimePickerDurationStrategy.swift in Sources */,
 				543C52E928E60EB100B94B9F /* SubscriptionsDataSource.swift in Sources */,
 				541184DA28E4FA340003CFA6 /* UserSubscriptionViewRow.swift in Sources */,
@@ -1035,12 +1026,12 @@
 				543C530428E60F0200B94B9F /* GenericDAO.swift in Sources */,
 				543C532828E6135D00B94B9F /* TextFieldWithTextView.swift in Sources */,
 				541184C928E4F5C70003CFA6 /* UserPrefencePersitable.swift in Sources */,
-				5445B59128FA32F900D2BD5D /* SubscriptionsAmmountService.swift in Sources */,
 				541184F328E4FCBA0003CFA6 /* UserSubscriptionsEmptyView.swift in Sources */,
 				54ADC31828E5774000725770 /* SubscriptionServicesDataSourceImp.swift in Sources */,
 				543C532C28E6135D00B94B9F /* TimePickerStrategy.swift in Sources */,
 				541184F628E4FD400003CFA6 /* UserSubscriptionsView.swift in Sources */,
 				543C532F28E6135D00B94B9F /* TimeMultiplePicker.swift in Sources */,
+				547078B628FC31610050C42F /* TimePickerRememberStrategy.swift in Sources */,
 				543C532928E6135D00B94B9F /* SubscriptionPriceView.swift in Sources */,
 				541184E228E4FAD10003CFA6 /* DateDuration.swift in Sources */,
 				54ADC31C28E577A600725770 /* SubcriptionServicesService.swift in Sources */,
@@ -1068,6 +1059,7 @@
 				543C530828E60F0200B94B9F /* SubscriptionServiceEntity.swift in Sources */,
 				54ADC34128E57A2700725770 /* SubscriptionServicesListRow.swift in Sources */,
 				541184D428E4F7CC0003CFA6 /* UIColor+Extensions.swift in Sources */,
+				547078B928FC33C40050C42F /* RememberOptions.swift in Sources */,
 				5498237528FC151E00247080 /* Date+Extensions.swift in Sources */,
 				54ADC33E28E579D700725770 /* SubscriptionServicesListView.swift in Sources */,
 				541184AF28E4F2680003CFA6 /* OnBoardingPageView.swift in Sources */,

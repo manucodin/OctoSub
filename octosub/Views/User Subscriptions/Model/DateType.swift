@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum DateType: String, CaseIterable, PickerRepresentableValue {
+enum DateType: String, Comparable, CaseIterable, Equatable, PickerRepresentableValue {
     case daily
     case weekly
     case monthly
@@ -40,6 +40,15 @@ enum DateType: String, CaseIterable, PickerRepresentableValue {
         }
     }
     
+    var sortOrder: Int {
+        switch self {
+        case .daily: return 0
+        case .weekly: return 1
+        case .monthly: return 2
+        case .annually: return 3
+        }
+    }
+    
     private var dayTimeInterval: TimeInterval {
         return 60*60*24
     }
@@ -54,5 +63,13 @@ enum DateType: String, CaseIterable, PickerRepresentableValue {
     
     private var yearTimeInterval: TimeInterval {
         return 365*dayTimeInterval
+    }
+    
+    static func == (lhs: DateType, rhs: DateType) -> Bool {
+        return lhs.sortOrder == rhs.sortOrder
+    }
+    
+    static func < (lhs: DateType, rhs: DateType) -> Bool {
+        return lhs.sortOrder < rhs.sortOrder
     }
 }

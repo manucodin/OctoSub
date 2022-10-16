@@ -179,28 +179,19 @@ struct CreateSubscriptionView: View {
             if viewModel.showPaymentFrequency {
                 TimeMultiplePicker(
                     selection: $viewModel.paymentFrequency,
-                    strategy: TimePickerRepetitionStrategy(
-                        firstValues: Array(1..<31),
-                        secondValues: DateType.allCases
-                    )
+                    strategy: viewModel.repetitionPicketStrategy
                 )
             }
             if viewModel.showDuration {
                 TimeMultiplePicker(
                     selection: $viewModel.duration,
-                    strategy: TimePickerDurationStrategy(
-                        firstValues: Array(1..<31),
-                        secondValues: DateType.allCases
-                    )
+                    strategy: viewModel.durationPickerStrategy
                 )
             }
             if viewModel.showUserRecordatory {
                 TimeMultiplePicker(
                     selection: $viewModel.userRecordatory,
-                    strategy: TimePickerRepetitionStrategy(
-                        firstValues: Array(1..<31),
-                        secondValues: DateType.allCases
-                    )
+                    strategy: viewModel.rememberPickerStrategy
                 )
             }
         })

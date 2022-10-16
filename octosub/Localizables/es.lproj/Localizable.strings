@@ -67,3 +67,9 @@
 "your_expense_by_total" = "Tus gastos totales";
 
 "payment_frequency" = "Frecuencia de pago";
+
+"never" = "Nunca";
+
+"same_day" = "Mismo día";
+
+"before" = "Antes";
