@@ -16,9 +16,9 @@ jobs:
           xcode-version: latest-stable
       - name: Show current Xcode version
         run: xcodebuild -version
-      - name: Build
-        run: xcodebuild clean build test -project octosub.xcodeproj -scheme octosub -derivedDataPath Build/ -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.0' -enableCodeCoverage YES | xcpretty
+      - name: Build and test
+        run: xcodebuild clean build test -project octosub.xcodeproj -scheme octosub -resultBundlePath coverage/result.xcresult -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.0' -enableCodeCoverage YES | xcpretty
       - name: Gather code coverage
-        run: xcrun xccov view Build/Logs/Test/*.xccovreport --json
+        run: xcrun llvm-cov export -format="lcov" coverage/result.xcresult > coverage_report.lcov
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v2
