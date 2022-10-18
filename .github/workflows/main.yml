@@ -31,4 +31,8 @@ jobs:
       - name: Show current Xcode version
         run: xcodebuild -version
       - name: Build
-        run: xcodebuild test -project octosub.xcodeproj -scheme octosub -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.0' | xcpretty
+        run: xcodebuild test -project octosub.xcodeproj -scheme octosub -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.0' -enableCodeCoverage YES | xcpretty
+      - name: Gather code coverage
+        run: xcrun xccov view Build/Logs/Test/*.xccovreport --json
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v2
