@@ -51,7 +51,7 @@ class CreateSubscriptionViewModel: ObservableObject {
     private var subscribers: Set<AnyCancellable> = []
     private let subscriptionDataSource: SubscriptionsDataSource
     
-    init(subscription: Subscription? = nil, subscriptionService: SubscriptionService, showView: Binding<Bool> ,subscriptionDataSource: SubscriptionsDataSource = SubscriptionsDataSourceImp()) {
+    init(subscription: Subscription? = nil, subscriptionService: SubscriptionService, showView: Binding<Bool>, subscriptionDataSource: SubscriptionsDataSource = SubscriptionsDataSourceImp()) {
         self.subscription = subscription
         self.subscriptionService = subscriptionService
         self.subscriptionDataSource = subscriptionDataSource
@@ -119,7 +119,7 @@ class CreateSubscriptionViewModel: ObservableObject {
         }
     }
     
-    private func createSubscription() -> Subscription {
+    internal func createSubscription() -> Subscription {
         let durationDate = Date(timeIntervalSince1970: Double(subscriptionDate.timestamp) + Double(duration?.timeInterval ?? 0))
         let nextPaymentDate = Date(timeIntervalSince1970: Double(subscriptionDate.timestamp) + Double(paymentFrequency?.timeInterval ?? 0))
         let userRecordatoryDate = Date(timeIntervalSince1970: Double(nextPaymentDate.timestamp) - Double(userRecordatory?.timeInterval ?? 0))
@@ -141,7 +141,7 @@ class CreateSubscriptionViewModel: ObservableObject {
         )
     }
     
-    private func validate() throws {
+    internal func validate() throws {
         if subscriptionName.isEmpty {
             throw SubscriptionError.emptyName
         }
@@ -151,7 +151,7 @@ class CreateSubscriptionViewModel: ObservableObject {
         }
     }
     
-    private func loadSubscription(subscription: Subscription) {
+    internal func loadSubscription(subscription: Subscription) {
         self.subscriptionName = subscription.name ?? ""
         self.subscriptionPrice = subscription.price
         self.userDescription = subscription.userDescription ?? ""

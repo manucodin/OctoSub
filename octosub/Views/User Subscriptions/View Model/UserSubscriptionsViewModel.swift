@@ -50,7 +50,6 @@ class UserSubscriptionsViewModel: ObservableObject {
         self.dateTypeSelected = dateType
         totalAmount = calculateAmmount(withDateType: dateType)
         totalAmountFormatted = CurrencyFormatter().string(from: NSNumber(value:totalAmount)) ?? ""
-
     }
     
     private func calculateAmmount(withDateType dateType: DateType) -> Double {

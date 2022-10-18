@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		540413A628FF3E5F0069ACC4 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 540413A528FF3E5F0069ACC4 /* FirebaseFirestore */; };
+		540413A828FF3E760069ACC4 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 540413A728FF3E760069ACC4 /* Realm */; };
+		540413AA28FF3E760069ACC4 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 540413A928FF3E760069ACC4 /* RealmSwift */; };
+		540413AC28FF41300069ACC4 /* SubcriptionServicesServiceMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540413AB28FF41300069ACC4 /* SubcriptionServicesServiceMocks.swift */; };
+		540413AE28FF42310069ACC4 /* SubscriptionServicesDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540413AD28FF42310069ACC4 /* SubscriptionServicesDataSourceTest.swift */; };
+		540413B128FF489F0069ACC4 /* SubscriptionServiceDTOMapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540413B028FF489F0069ACC4 /* SubscriptionServiceDTOMapperTest.swift */; };
+		540413B428FF49530069ACC4 /* Fakery in Frameworks */ = {isa = PBXBuildFile; productRef = 540413B328FF49530069ACC4 /* Fakery */; };
+		540413B628FF4DF50069ACC4 /* SubscriptionServicesListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540413B528FF4DF50069ACC4 /* SubscriptionServicesListViewModelTest.swift */; };
+		540413B828FF4E7E0069ACC4 /* SubscriptionServicesDataSourceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540413B728FF4E7E0069ACC4 /* SubscriptionServicesDataSourceMock.swift */; };
+		540413BC28FF54D20069ACC4 /* CreateSubscriptionViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540413BB28FF54D20069ACC4 /* CreateSubscriptionViewModelTest.swift */; };
+		540413C028FF561C0069ACC4 /* SubscriptionsDataSourceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540413BF28FF561C0069ACC4 /* SubscriptionsDataSourceMock.swift */; };
 		541184AC28E4F2240003CFA6 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541184AB28E4F2240003CFA6 /* OnBoardingView.swift */; };
 		541184AF28E4F2680003CFA6 /* OnBoardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541184AE28E4F2680003CFA6 /* OnBoardingPageView.swift */; };
 		541184B328E4F30C0003CFA6 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541184B228E4F30C0003CFA6 /* Color+Extensions.swift */; };
@@ -113,6 +124,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		540413AB28FF41300069ACC4 /* SubcriptionServicesServiceMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcriptionServicesServiceMocks.swift; sourceTree = "<group>"; };
+		540413AD28FF42310069ACC4 /* SubscriptionServicesDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionServicesDataSourceTest.swift; sourceTree = "<group>"; };
+		540413B028FF489F0069ACC4 /* SubscriptionServiceDTOMapperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionServiceDTOMapperTest.swift; sourceTree = "<group>"; };
+		540413B528FF4DF50069ACC4 /* SubscriptionServicesListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionServicesListViewModelTest.swift; sourceTree = "<group>"; };
+		540413B728FF4E7E0069ACC4 /* SubscriptionServicesDataSourceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionServicesDataSourceMock.swift; sourceTree = "<group>"; };
+		540413BB28FF54D20069ACC4 /* CreateSubscriptionViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSubscriptionViewModelTest.swift; sourceTree = "<group>"; };
+		540413BF28FF561C0069ACC4 /* SubscriptionsDataSourceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsDataSourceMock.swift; sourceTree = "<group>"; };
 		541184AB28E4F2240003CFA6 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		541184AE28E4F2680003CFA6 /* OnBoardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPageView.swift; sourceTree = "<group>"; };
 		541184B228E4F30C0003CFA6 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
@@ -216,7 +234,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				540413B428FF49530069ACC4 /* Fakery in Frameworks */,
+				540413AA28FF3E760069ACC4 /* RealmSwift in Frameworks */,
+				540413A828FF3E760069ACC4 /* Realm in Frameworks */,
 				54ADC30F28E5746300725770 /* Nimble in Frameworks */,
+				540413A628FF3E5F0069ACC4 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +252,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		540413AF28FF48910069ACC4 /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				540413B028FF489F0069ACC4 /* SubscriptionServiceDTOMapperTest.swift */,
+			);
+			path = Mappers;
+			sourceTree = "<group>";
+		};
 		541184AA28E4F2130003CFA6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -470,6 +500,9 @@
 			isa = PBXGroup;
 			children = (
 				541184FF28E4FF650003CFA6 /* AppSettingsDataSourceMock.swift */,
+				540413AB28FF41300069ACC4 /* SubcriptionServicesServiceMocks.swift */,
+				540413B728FF4E7E0069ACC4 /* SubscriptionServicesDataSourceMock.swift */,
+				540413BF28FF561C0069ACC4 /* SubscriptionsDataSourceMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -485,6 +518,8 @@
 			isa = PBXGroup;
 			children = (
 				541184FC28E4FF020003CFA6 /* AppSettingsViewModelTest.swift */,
+				540413B528FF4DF50069ACC4 /* SubscriptionServicesListViewModelTest.swift */,
+				540413BB28FF54D20069ACC4 /* CreateSubscriptionViewModelTest.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -493,6 +528,7 @@
 			isa = PBXGroup;
 			children = (
 				5411850628E502330003CFA6 /* AppSettingsDataSourceTest.swift */,
+				540413AD28FF42310069ACC4 /* SubscriptionServicesDataSourceTest.swift */,
 			);
 			path = "Data Sources";
 			sourceTree = "<group>";
@@ -551,6 +587,7 @@
 			isa = PBXGroup;
 			children = (
 				541184FE28E4FF510003CFA6 /* Mocks */,
+				540413AF28FF48910069ACC4 /* Mappers */,
 				5411850528E502180003CFA6 /* Data Sources */,
 				5411850428E502090003CFA6 /* View Models */,
 			);
@@ -890,6 +927,10 @@
 			name = octosubTests;
 			packageProductDependencies = (
 				54ADC30E28E5746300725770 /* Nimble */,
+				540413A528FF3E5F0069ACC4 /* FirebaseFirestore */,
+				540413A728FF3E760069ACC4 /* Realm */,
+				540413A928FF3E760069ACC4 /* RealmSwift */,
+				540413B328FF49530069ACC4 /* Fakery */,
 			);
 			productName = octosubTests;
 			productReference = 5424903528E4F09300149C08 /* octosubTests.xctest */;
@@ -952,6 +993,7 @@
 				54ADC33028E5794900725770 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				543C530A28E60F8400B94B9F /* XCRemoteSwiftPackageReference "realm-swift" */,
 				543C530F28E6123700B94B9F /* XCRemoteSwiftPackageReference "BottomSheet" */,
+				540413B228FF49530069ACC4 /* XCRemoteSwiftPackageReference "Fakery" */,
 			);
 			productRefGroup = 5424902628E4F09200149C08 /* Products */;
 			projectDirPath = "";
@@ -1071,9 +1113,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				540413AC28FF41300069ACC4 /* SubcriptionServicesServiceMocks.swift in Sources */,
+				540413B828FF4E7E0069ACC4 /* SubscriptionServicesDataSourceMock.swift in Sources */,
+				540413AE28FF42310069ACC4 /* SubscriptionServicesDataSourceTest.swift in Sources */,
 				541184FD28E4FF020003CFA6 /* AppSettingsViewModelTest.swift in Sources */,
+				540413B128FF489F0069ACC4 /* SubscriptionServiceDTOMapperTest.swift in Sources */,
+				540413C028FF561C0069ACC4 /* SubscriptionsDataSourceMock.swift in Sources */,
 				5411850728E502330003CFA6 /* AppSettingsDataSourceTest.swift in Sources */,
+				540413B628FF4DF50069ACC4 /* SubscriptionServicesListViewModelTest.swift in Sources */,
 				5411850028E4FF650003CFA6 /* AppSettingsDataSourceMock.swift in Sources */,
+				540413BC28FF54D20069ACC4 /* CreateSubscriptionViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1449,6 +1498,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		540413B228FF49530069ACC4 /* XCRemoteSwiftPackageReference "Fakery" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vadymmarkov/Fakery";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		543C530A28E60F8400B94B9F /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -1484,6 +1541,26 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		540413A528FF3E5F0069ACC4 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 54ADC33028E5794900725770 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		540413A728FF3E760069ACC4 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 543C530A28E60F8400B94B9F /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		540413A928FF3E760069ACC4 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 543C530A28E60F8400B94B9F /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		540413B328FF49530069ACC4 /* Fakery */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 540413B228FF49530069ACC4 /* XCRemoteSwiftPackageReference "Fakery" */;
+			productName = Fakery;
+		};
 		543C530B28E60F8400B94B9F /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 543C530A28E60F8400B94B9F /* XCRemoteSwiftPackageReference "realm-swift" */;
