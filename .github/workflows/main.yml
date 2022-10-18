@@ -33,6 +33,6 @@ jobs:
       - name: Build
         run: xcodebuild test -project octosub.xcodeproj -scheme octosub -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.0' -enableCodeCoverage YES | xcpretty
       - name: Gather code coverage
-        run: xcrun xccov view Build/Logs/Test/*.xccovreport --json
+        run: xcrun xccov view --report Build/Logs/Test/*.xcresult --json
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v2
