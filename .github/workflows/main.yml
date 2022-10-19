@@ -19,6 +19,6 @@ jobs:
       - name: Build and test
         run: xcodebuild clean build test -project octosub.xcodeproj -scheme octosub -resultBundlePath coverage/result.xcresult -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.0' -enableCodeCoverage YES | xcpretty
       - name: Gather code coverage
-        run: xcrun llvm-cov export -format="lcov" coverage/result.xcresult -instr-profile .build/debug/codecov/default.profdata > coverage_report.lcov
+        run: xcrun xccov view --report --json coverage/result.xcresult > coverage/result.json
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v2
